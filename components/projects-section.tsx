@@ -14,7 +14,7 @@ const projects = [
     featured: true,
     number: "01",
     githubUrl: "https://github.com/LyhengLT/nomads-clone",
-    demoUrl: null,
+    demoUrl: "lyhenglt.github.io/nomads-clone/",
   },
   {
     title: "WIP Clone",
