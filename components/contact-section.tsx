@@ -20,7 +20,7 @@ const contacts = [
     href: "https://instagram.com/lay_lyheng",
     color: "text-pink-400",
     bg: "bg-pink-400/10",
-    description: "For casual updates",
+    description: "For casual updates & discussions",
   },
   {
     icon: Github,
