@@ -3,8 +3,8 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Lyheng | Developer Portfolio',
-  description: 'Passionate developer and student at BELTEI International University, building real-world web applications.',
+  title: 'Modern Calculator',
+  description: 'A polished calculator with keyboard support, live preview, and safe expression evaluation.',
   generator: 'v0.app',
 }
 
