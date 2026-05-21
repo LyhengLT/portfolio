@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef } from "react"
+import type { CSSProperties } from "react"
 import { Code2, Rocket, Heart, Coffee } from "lucide-react"
 
 const traits = [
@@ -59,42 +60,42 @@ export function AboutSection() {
   }, [])
 
   return (
-    <section id="about" ref={sectionRef} className="py-24 px-6 lg:px-12">
+    <section id="about" ref={sectionRef} className="section-shell px-6 lg:px-12">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="mb-14">
-          <p className="reveal text-primary font-mono text-xs tracking-widest uppercase mb-3">
+        <div className="mb-16 md:mb-20">
+          <p className="reveal section-kicker text-primary font-mono uppercase mb-4">
             01. About
           </p>
-          <h2 className="reveal text-3xl md:text-4xl font-bold mb-3 text-foreground">
+          <h2 className="reveal section-title font-black mb-6 text-foreground">
             Who I Am
           </h2>
-          <p className="reveal text-muted-foreground">
+          <p className="reveal section-subtitle text-muted-foreground">
             A CS student turned builder — turning ideas into working software.
           </p>
         </div>
 
         {/* Bio + Avatar */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-          <div className="reveal-left space-y-4">
-            <p className="text-foreground/80 leading-relaxed">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 md:gap-16 items-center mb-20">
+          <div className="reveal-left space-y-6 text-lg md:text-xl">
+            <p className="text-foreground/85 leading-relaxed">
               I&apos;m <span className="text-primary font-semibold">Lyheng</span>, a developer
               studying at <span className="text-accent font-semibold">BELTEI International University</span>{" "}
               in Phnom Penh, Cambodia.
             </p>
-            <p className="text-muted-foreground leading-relaxed text-sm">
+            <p className="text-muted-foreground leading-relaxed">
               My approach: learn by building real things. Instead of toy projects, I clone
               production websites — Nomads.com, WIP.co, BongThom, RemoteOK — and implement
               real features like auth, listing management, and REST APIs from scratch.
             </p>
-            <p className="text-muted-foreground leading-relaxed text-sm">
+            <p className="text-muted-foreground leading-relaxed">
               I work with <span className="text-emerald-400 font-medium">Vue.js</span> for
               frontend, <span className="text-cyan-400 font-medium">Go (Fiber v3)</span> for
               backend, and <span className="text-orange-400 font-medium">Oracle Database</span> for
               persistence.
             </p>
-            <blockquote className="border-l-2 border-primary/40 pl-4 mt-4">
-              <p className="text-muted-foreground text-sm italic">
+            <blockquote className="border-l-4 border-primary/40 pl-5 mt-5">
+              <p className="text-muted-foreground italic">
                 &ldquo;The best way to learn is to build something real.&rdquo;
               </p>
             </blockquote>
@@ -103,19 +104,19 @@ export function AboutSection() {
           {/* Avatar */}
           <div className="reveal-right flex justify-center lg:justify-end">
             <div className="relative">
-              <div className="absolute -inset-3 rounded-full border border-dashed border-primary/15 animate-spin-slow" />
-              <div className="w-48 h-48 rounded-full bg-gradient-to-br from-primary to-accent p-0.5">
+              <div className="absolute -inset-5 rounded-full border border-dashed border-primary/20 animate-spin-slow" />
+              <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-primary via-cyan-400 to-accent p-0.5 shadow-2xl shadow-primary/15">
                 <div className="w-full h-full rounded-full bg-card flex flex-col items-center justify-center gap-1">
-                  <span className="text-5xl font-black bg-gradient-to-br from-primary to-accent bg-clip-text text-transparent">
+                  <span className="text-7xl md:text-8xl font-black bg-gradient-to-br from-primary to-accent bg-clip-text text-transparent">
                     LH
                   </span>
-                  <span className="text-xs text-muted-foreground font-mono">Developer</span>
+                  <span className="text-sm md:text-base text-muted-foreground font-mono">Developer</span>
                 </div>
               </div>
-              <div className="absolute -top-1 -right-3 bg-card border border-border rounded-lg px-2.5 py-1 text-xs font-mono text-emerald-400 shadow-lg">
+              <div className="absolute top-6 -right-5 bg-card border border-border rounded-lg px-3.5 py-2 text-sm font-mono text-emerald-400 shadow-lg transition-transform duration-300 hover:-translate-y-1">
                 Vue.js
               </div>
-              <div className="absolute -bottom-1 -left-3 bg-card border border-border rounded-lg px-2.5 py-1 text-xs font-mono text-cyan-400 shadow-lg">
+              <div className="absolute bottom-8 -left-5 bg-card border border-border rounded-lg px-3.5 py-2 text-sm font-mono text-cyan-400 shadow-lg transition-transform duration-300 hover:-translate-y-1">
                 Go Fiber
               </div>
             </div>
@@ -127,14 +128,14 @@ export function AboutSection() {
           {traits.map((trait, i) => (
             <div
               key={trait.title}
-              className="reveal bg-card border border-border rounded-xl p-5 hover:border-border/80 transition-all duration-200 hover:-translate-y-0.5"
-              style={{ transitionDelay: `${i * 60}ms` }}
+              className="reveal modern-card bg-card border border-border rounded-xl p-6 md:p-7 hover:border-primary/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-black/20"
+              style={{ "--reveal-delay": `${i * 70}ms` } as CSSProperties}
             >
-              <div className={`w-9 h-9 rounded-lg ${trait.bg} flex items-center justify-center mb-3`}>
-                <trait.icon className={`w-4 h-4 ${trait.color}`} />
+              <div className={`w-12 h-12 rounded-lg ${trait.bg} flex items-center justify-center mb-4`}>
+                <trait.icon className={`w-5 h-5 ${trait.color}`} />
               </div>
-              <h3 className="font-semibold text-foreground text-sm mb-1">{trait.title}</h3>
-              <p className="text-muted-foreground text-xs leading-relaxed">{trait.description}</p>
+              <h3 className="font-bold text-foreground text-xl mb-2">{trait.title}</h3>
+              <p className="text-muted-foreground text-base leading-relaxed">{trait.description}</p>
             </div>
           ))}
         </div>

@@ -1,6 +1,8 @@
 "use client"
 
 import { useEffect, useRef } from "react"
+import type { CSSProperties } from "react"
+import { Code2, Database, Server, Wrench } from "lucide-react"
 
 const techStack = [
   {
@@ -8,7 +10,7 @@ const techStack = [
     gradient: "from-emerald-500 to-teal-500",
     color: "text-emerald-400",
     bg: "bg-emerald-400/10",
-    icon: "⚡",
+    icon: Code2,
     techs: [
       { name: "Vue.js", level: 80 },
       { name: "HTML5", level: 95 },
@@ -21,7 +23,7 @@ const techStack = [
     gradient: "from-cyan-500 to-blue-600",
     color: "text-cyan-400",
     bg: "bg-cyan-400/10",
-    icon: "⚙️",
+    icon: Server,
     techs: [
       { name: "Go (Fiber v3)", level: 70 },
       { name: "REST APIs", level: 75 },
@@ -32,7 +34,7 @@ const techStack = [
     gradient: "from-orange-500 to-red-500",
     color: "text-orange-400",
     bg: "bg-orange-400/10",
-    icon: "🗄️",
+    icon: Database,
     techs: [
       { name: "Oracle Database", level: 65 },
       { name: "SQL", level: 70 },
@@ -43,7 +45,7 @@ const techStack = [
     gradient: "from-purple-500 to-violet-600",
     color: "text-purple-400",
     bg: "bg-purple-400/10",
-    icon: "🛠️",
+    icon: Wrench,
     techs: [
       { name: "Git", level: 80 },
       { name: "VS Code", level: 90 },
@@ -95,46 +97,47 @@ export function TechStackSection() {
   }, [])
 
   return (
-    <section id="tech-stack" ref={sectionRef} className="py-24 px-6 lg:px-12">
+    <section id="tech-stack" ref={sectionRef} className="section-shell px-6 lg:px-12">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-14">
-          <p className="reveal text-primary font-mono text-xs tracking-widest uppercase mb-3">
+        <div className="mb-16 md:mb-20">
+          <p className="reveal section-kicker text-primary font-mono uppercase mb-4">
             02. Skills
           </p>
-          <h2 className="reveal text-3xl md:text-4xl font-bold mb-3 text-foreground">
+          <h2 className="reveal section-title font-black mb-6 text-foreground">
             Tech Stack
           </h2>
-          <p className="reveal text-muted-foreground">
+          <p className="reveal section-subtitle text-muted-foreground">
             Technologies I use to build real applications
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {techStack.map((stack) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+          {techStack.map((stack, i) => (
             <div
               key={stack.category}
-              className="reveal bg-card border border-border rounded-xl p-6 hover:border-border/80 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/10"
+              className="reveal modern-card bg-card border border-border rounded-xl p-7 md:p-8 hover:border-primary/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-black/20"
+              style={{ "--reveal-delay": `${i * 80}ms` } as CSSProperties}
             >
               {/* Header */}
-              <div className="flex items-center gap-3 mb-5">
-                <div className={`w-10 h-10 rounded-lg ${stack.bg} flex items-center justify-center text-lg`}>
-                  {stack.icon}
+              <div className="flex items-center gap-4 mb-7">
+                <div className={`w-14 h-14 rounded-lg ${stack.bg} flex items-center justify-center`}>
+                  <stack.icon className={`w-6 h-6 ${stack.color}`} />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground">{stack.category}</h3>
-                  <p className="text-xs text-muted-foreground">{stack.techs.length} technologies</p>
+                  <h3 className="font-bold text-foreground text-2xl">{stack.category}</h3>
+                  <p className="text-sm text-muted-foreground">{stack.techs.length} technologies</p>
                 </div>
               </div>
 
               {/* Skill bars */}
-              <div className="space-y-3.5">
+              <div className="space-y-5">
                 {stack.techs.map((tech) => (
                   <div key={tech.name}>
-                    <div className="flex justify-between items-center mb-1.5">
-                      <span className="text-sm text-foreground/70">{tech.name}</span>
-                      <span className={`text-xs font-semibold ${stack.color}`}>{tech.level}%</span>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-base md:text-lg text-foreground/80 font-medium">{tech.name}</span>
+                      <span className={`text-sm font-bold ${stack.color}`}>{tech.level}%</span>
                     </div>
-                    <div className="h-1 bg-secondary rounded-full overflow-hidden">
+                    <div className="h-2 bg-secondary rounded-full overflow-hidden">
                       <div
                         className={`skill-bar h-full bg-gradient-to-r ${stack.gradient} rounded-full transition-all duration-1000 ease-out`}
                         style={{ width: "0%" }}

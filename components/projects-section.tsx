@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef } from "react"
+import type { CSSProperties } from "react"
 import { ExternalLink, Github, Star, Lock } from "lucide-react"
 
 const projects = [
@@ -79,34 +80,38 @@ export function ProjectsSection() {
   }, [])
 
   return (
-    <section id="projects" ref={sectionRef} className="py-24 px-6 lg:px-12">
+    <section id="projects" ref={sectionRef} className="section-shell px-6 lg:px-12">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="mb-14">
-          <p className="reveal text-primary font-mono text-xs tracking-widest uppercase mb-3">
+        <div className="mb-16 md:mb-20">
+          <p className="reveal section-kicker text-primary font-mono uppercase mb-4">
             03. Work
           </p>
-          <h2 className="reveal text-3xl md:text-4xl font-bold mb-3 text-foreground">
+          <h2 className="reveal section-title font-black mb-6 text-foreground">
             Projects
           </h2>
-          <p className="reveal text-muted-foreground">
+          <p className="reveal section-subtitle text-muted-foreground">
             Real-world clones built from scratch — no tutorials, just code
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {projects.map((project) => (
-            <div key={project.title} className="reveal group">
-              <div className="bg-card border border-border rounded-2xl p-7 h-full transition-all duration-300 hover:border-border/80 hover:shadow-xl hover:shadow-black/20 hover:-translate-y-1">
+          {projects.map((project, i) => (
+            <div
+              key={project.title}
+              className="reveal group"
+              style={{ "--reveal-delay": `${i * 90}ms` } as CSSProperties}
+            >
+              <div className="modern-card bg-card border border-border rounded-2xl p-7 md:p-9 h-full transition-all duration-300 hover:border-primary/40 hover:shadow-2xl hover:shadow-black/25 hover:-translate-y-2">
                 {/* Top row */}
                 <div className="flex items-start justify-between mb-6">
-                  <span className={`text-4xl font-black bg-gradient-to-r ${project.gradient} bg-clip-text text-transparent opacity-40 group-hover:opacity-70 transition-opacity`}>
+                  <span className={`text-6xl md:text-7xl font-black bg-gradient-to-r ${project.gradient} bg-clip-text text-transparent opacity-40 group-hover:opacity-80 transition-opacity leading-none`}>
                     {project.number}
                   </span>
                   <div className="flex items-center gap-2">
                     {project.featured && (
-                      <span className="flex items-center gap-1 px-2.5 py-1 bg-amber-500/10 border border-amber-500/20 rounded-full text-amber-400 text-xs font-medium">
-                        <Star className="w-3 h-3 fill-current" />
+                      <span className="flex items-center gap-1 px-3 py-1.5 bg-amber-500/10 border border-amber-500/20 rounded-full text-amber-400 text-sm font-semibold">
+                        <Star className="w-3.5 h-3.5 fill-current" />
                         Featured
                       </span>
                     )}
@@ -114,15 +119,15 @@ export function ProjectsSection() {
                 </div>
 
                 {/* Title & tagline */}
-                <h3 className="text-xl font-bold text-foreground mb-1">
+                <h3 className="text-3xl md:text-4xl font-black text-foreground mb-2 leading-tight">
                   {project.title}
                 </h3>
-                <p className={`text-sm font-medium bg-gradient-to-r ${project.gradient} bg-clip-text text-transparent mb-4`}>
+                <p className={`text-lg md:text-xl font-bold bg-gradient-to-r ${project.gradient} bg-clip-text text-transparent mb-5`}>
                   {project.tagline}
                 </p>
 
                 {/* Description */}
-                <p className="text-muted-foreground text-sm leading-relaxed mb-5">
+                <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-6">
                   {project.description}
                 </p>
 
@@ -131,7 +136,7 @@ export function ProjectsSection() {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2.5 py-1 text-xs font-medium rounded-md bg-secondary text-secondary-foreground border border-border/50"
+                      className="px-3 py-1.5 text-sm font-semibold rounded-md bg-secondary text-secondary-foreground border border-border/50"
                     >
                       {tech}
                     </span>
@@ -145,14 +150,14 @@ export function ProjectsSection() {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                      className="inline-flex items-center gap-2 text-base font-semibold text-muted-foreground hover:text-foreground transition-colors"
                     >
-                      <Github className="w-4 h-4" />
+                      <Github className="w-5 h-5" />
                       Source Code
                     </a>
                   ) : (
-                    <span className="inline-flex items-center gap-2 text-sm text-muted-foreground/40 cursor-not-allowed select-none">
-                      <Lock className="w-3.5 h-3.5" />
+                    <span className="inline-flex items-center gap-2 text-base text-muted-foreground/40 cursor-not-allowed select-none">
+                      <Lock className="w-4 h-4" />
                       Private
                     </span>
                   )}
@@ -162,14 +167,14 @@ export function ProjectsSection() {
                       href={project.demoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                      className="inline-flex items-center gap-2 text-base font-semibold text-muted-foreground hover:text-foreground transition-colors"
                     >
-                      <ExternalLink className="w-4 h-4" />
+                      <ExternalLink className="w-5 h-5" />
                       Live Demo
                     </a>
                   ) : (
-                    <span className="inline-flex items-center gap-2 text-sm text-muted-foreground/40 cursor-not-allowed select-none">
-                      <ExternalLink className="w-3.5 h-3.5" />
+                    <span className="inline-flex items-center gap-2 text-base text-muted-foreground/40 cursor-not-allowed select-none">
+                      <ExternalLink className="w-4 h-4" />
                       No Demo
                     </span>
                   )}

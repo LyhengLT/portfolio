@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef } from "react"
+import type { CSSProperties } from "react"
 import { BookOpen, Code, Database, Zap } from "lucide-react"
 
 const learning = [
@@ -95,48 +96,49 @@ export function LearningSection() {
   }, [])
 
   return (
-    <section id="learning" ref={sectionRef} className="py-24 px-6 lg:px-12">
+    <section id="learning" ref={sectionRef} className="section-shell px-6 lg:px-12">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-14">
-          <p className="reveal text-primary font-mono text-xs tracking-widest uppercase mb-3">
+        <div className="mb-16 md:mb-20">
+          <p className="reveal section-kicker text-primary font-mono uppercase mb-4">
             04. Growth
           </p>
-          <h2 className="reveal text-3xl md:text-4xl font-bold mb-3 text-foreground">
+          <h2 className="reveal section-title font-black mb-6 text-foreground">
             Currently Learning
           </h2>
-          <p className="reveal text-muted-foreground">
+          <p className="reveal section-subtitle text-muted-foreground">
             Always expanding — knowledge compounds over time
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {learning.map((item) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+          {learning.map((item, i) => (
             <div
               key={item.title}
-              className="reveal bg-card border border-border rounded-xl p-6 hover:border-border/80 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/10"
+              className="reveal modern-card bg-card border border-border rounded-xl p-7 md:p-8 hover:border-primary/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-black/20"
+              style={{ "--reveal-delay": `${i * 80}ms` } as CSSProperties}
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-3">
-                  <div className={`w-10 h-10 rounded-lg ${item.bg} flex items-center justify-center`}>
-                    <item.icon className={`w-4.5 h-4.5 ${item.color}`} />
+                  <div className={`w-14 h-14 rounded-lg ${item.bg} flex items-center justify-center`}>
+                    <item.icon className={`w-6 h-6 ${item.color}`} />
                   </div>
-                  <h3 className="font-semibold text-foreground">{item.title}</h3>
+                  <h3 className="font-bold text-foreground text-2xl">{item.title}</h3>
                 </div>
-                <span className={`text-xs font-medium px-2.5 py-1 rounded-full border ${statusStyle[item.status]}`}>
+                <span className={`text-sm font-semibold px-3 py-1.5 rounded-full border ${statusStyle[item.status]}`}>
                   {item.status}
                 </span>
               </div>
 
-              <p className="text-muted-foreground text-sm leading-relaxed mb-5">
+              <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-6">
                 {item.description}
               </p>
 
               <div>
-                <div className="flex justify-between items-center mb-1.5">
-                  <span className="text-xs text-muted-foreground">Progress</span>
-                  <span className={`text-xs font-semibold ${item.color}`}>{item.progress}%</span>
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-sm text-muted-foreground">Progress</span>
+                  <span className={`text-sm font-bold ${item.color}`}>{item.progress}%</span>
                 </div>
-                <div className="h-1 bg-secondary rounded-full overflow-hidden">
+                <div className="h-2 bg-secondary rounded-full overflow-hidden">
                   <div
                     className={`progress-bar h-full bg-gradient-to-r ${item.gradient} rounded-full transition-all duration-[1200ms] ease-out`}
                     style={{ width: "0%" }}
