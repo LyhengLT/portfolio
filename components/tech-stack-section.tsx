@@ -7,9 +7,9 @@ import { Code2, Database, Server, Wrench } from "lucide-react"
 const techStack = [
   {
     category: "Frontend",
-    gradient: "from-emerald-500 to-teal-500",
-    color: "text-emerald-400",
-    bg: "bg-emerald-400/10",
+    gradient: "from-[#68795d] to-[#9ca874]",
+    color: "text-[#68795d]",
+    bg: "bg-[#68795d]/10",
     icon: Code2,
     techs: [
       { name: "Vue.js", level: 80 },
@@ -20,9 +20,9 @@ const techStack = [
   },
   {
     category: "Backend",
-    gradient: "from-cyan-500 to-blue-600",
-    color: "text-cyan-400",
-    bg: "bg-cyan-400/10",
+    gradient: "from-[#9b5f3d] to-[#c18455]",
+    color: "text-[#9b5f3d]",
+    bg: "bg-[#9b5f3d]/10",
     icon: Server,
     techs: [
       { name: "Go (Fiber v3)", level: 70 },
@@ -31,9 +31,9 @@ const techStack = [
   },
   {
     category: "Database",
-    gradient: "from-orange-500 to-red-500",
-    color: "text-orange-400",
-    bg: "bg-orange-400/10",
+    gradient: "from-[#8f6b45] to-[#caa26a]",
+    color: "text-[#8f6b45]",
+    bg: "bg-[#8f6b45]/10",
     icon: Database,
     techs: [
       { name: "Oracle Database", level: 65 },
@@ -42,9 +42,9 @@ const techStack = [
   },
   {
     category: "Tools",
-    gradient: "from-purple-500 to-violet-600",
-    color: "text-purple-400",
-    bg: "bg-purple-400/10",
+    gradient: "from-[#374151] to-[#68795d]",
+    color: "text-[#374151]",
+    bg: "bg-[#374151]/10",
     icon: Wrench,
     techs: [
       { name: "Git", level: 80 },

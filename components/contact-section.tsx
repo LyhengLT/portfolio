@@ -19,8 +19,8 @@ const contacts = [
     label: "Instagram",
     value: "@lay_lyheng",
     href: "https://instagram.com/lay_lyheng",
-    color: "text-pink-400",
-    bg: "bg-pink-400/10",
+    color: "text-[#a65f4a]",
+    bg: "bg-[#a65f4a]/10",
     description: "For casual updates & discussions",
   },
   {
@@ -28,8 +28,8 @@ const contacts = [
     label: "GitHub",
     value: "LyhengLT",
     href: "https://github.com/LyhengLT",
-    color: "text-violet-400",
-    bg: "bg-violet-400/10",
+    color: "text-[#374151]",
+    bg: "bg-[#374151]/10",
     description: "See my code & projects",
   },
 ]

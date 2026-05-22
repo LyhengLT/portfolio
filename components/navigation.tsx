@@ -114,7 +114,7 @@ export function Navigation() {
       }`}
       style={{ "--scroll-progress": scrollProgress } as CSSProperties}
     >
-      <div className="scroll-progress absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-primary via-cyan-300 to-accent" />
+      <div className="scroll-progress absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-primary via-[#caa26a] to-accent" />
       <div className="max-w-6xl mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-[4.5rem]">
           {/* Logo */}
@@ -123,7 +123,7 @@ export function Navigation() {
             onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }) }}
             className="relative text-2xl font-black group"
           >
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent hover:opacity-90 transition-opacity">
+            <span className="bg-gradient-to-r from-primary via-[#8c6a45] to-accent bg-clip-text text-transparent hover:opacity-90 transition-opacity">
               Lyheng.
             </span>
           </a>
@@ -157,7 +157,7 @@ export function Navigation() {
           <div className="flex items-center gap-3">
             <a
               href="mailto:laylyheng88@gmail.com"
-              className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-primary to-cyan-500 text-primary-foreground text-base font-bold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/25"
+              className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-primary to-accent text-primary-foreground text-base font-bold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/25"
             >
               Hire Me
             </a>
@@ -197,7 +197,7 @@ export function Navigation() {
           <div className="pt-2">
             <a
               href="mailto:laylyheng88@gmail.com"
-              className="block text-center px-4 py-3 bg-gradient-to-r from-primary to-cyan-500 text-primary-foreground text-lg font-bold rounded-lg"
+              className="block text-center px-4 py-3 bg-gradient-to-r from-primary to-accent text-primary-foreground text-lg font-bold rounded-lg"
             >
               Hire Me
             </a>

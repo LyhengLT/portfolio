@@ -40,7 +40,7 @@ export function Footer() {
           {/* Right side */}
           <p className="text-muted-foreground text-base flex items-center gap-1.5">
             Built with{" "}
-            <Heart className="w-4 h-4 text-rose-500 fill-current" />{" "}
+            <Heart className="w-4 h-4 text-[#a65f4a] fill-current" />{" "}
             using{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent font-medium">
               Next.js

@@ -77,7 +77,7 @@ export function HeroSection() {
 
         {/* Name */}
         <h1 className="opacity-0 animate-slide-up animation-delay-200 text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[11.5rem] font-black leading-[0.82] mb-8">
-          <span className="bg-gradient-to-r from-primary via-cyan-400 to-accent bg-clip-text text-transparent animate-gradient-x">
+          <span className="bg-gradient-to-r from-primary via-[#caa26a] to-accent bg-clip-text text-transparent animate-gradient-x">
             Lyheng
           </span>
         </h1>
@@ -105,8 +105,8 @@ export function HeroSection() {
         {/* Bio */}
         <p className="opacity-0 animate-slide-up animation-delay-400 text-muted-foreground max-w-3xl text-xl md:text-2xl leading-relaxed mb-10">
           Building real-world web apps with{" "}
-          <span className="text-emerald-400 font-medium">Vue.js</span> on the front
-          and <span className="text-cyan-400 font-medium">Go (Fiber)</span> on the back.
+          <span className="text-[#68795d] font-semibold">Vue.js</span> on the front
+          and <span className="text-[#9b5f3d] font-semibold">Go (Fiber)</span> on the back.
         </p>
 
         {/* CTA */}

@@ -9,29 +9,29 @@ const traits = [
     icon: Code2,
     title: "Clean Code",
     description: "Readable, maintainable code — not just code that works.",
-    color: "text-cyan-400",
-    bg: "bg-cyan-400/10",
+    color: "text-[#8f6b45]",
+    bg: "bg-[#8f6b45]/10",
   },
   {
     icon: Rocket,
     title: "Ship Fast",
     description: "I build iteratively, shipping real projects that solve real problems.",
-    color: "text-purple-400",
-    bg: "bg-purple-400/10",
+    color: "text-[#68795d]",
+    bg: "bg-[#68795d]/10",
   },
   {
     icon: Heart,
     title: "Passionate",
     description: "Web development isn't a job to me — it's something I genuinely love.",
-    color: "text-rose-400",
-    bg: "bg-rose-400/10",
+    color: "text-[#a65f4a]",
+    bg: "bg-[#a65f4a]/10",
   },
   {
     icon: Coffee,
     title: "Always Learning",
     description: "Every day is a chance to level up with new tools and patterns.",
-    color: "text-amber-400",
-    bg: "bg-amber-400/10",
+    color: "text-[#b4833f]",
+    bg: "bg-[#b4833f]/10",
   },
 ]
 
@@ -89,9 +89,9 @@ export function AboutSection() {
               real features like auth, listing management, and REST APIs from scratch.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              I work with <span className="text-emerald-400 font-medium">Vue.js</span> for
-              frontend, <span className="text-cyan-400 font-medium">Go (Fiber v3)</span> for
-              backend, and <span className="text-orange-400 font-medium">Oracle Database</span> for
+              I work with <span className="text-[#68795d] font-semibold">Vue.js</span> for
+              frontend, <span className="text-[#9b5f3d] font-semibold">Go (Fiber v3)</span> for
+              backend, and <span className="text-[#8f6b45] font-semibold">Oracle Database</span> for
               persistence.
             </p>
             <blockquote className="border-l-4 border-primary/40 pl-5 mt-5">
@@ -105,7 +105,7 @@ export function AboutSection() {
           <div className="reveal-right flex justify-center lg:justify-end">
             <div className="relative">
               <div className="absolute -inset-5 rounded-full border border-dashed border-primary/20 animate-spin-slow" />
-              <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-primary via-cyan-400 to-accent p-0.5 shadow-2xl shadow-primary/15">
+              <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-primary via-[#caa26a] to-accent p-0.5 shadow-2xl shadow-primary/15">
                 <div className="w-full h-full rounded-full bg-card flex flex-col items-center justify-center gap-1">
                   <span className="text-7xl md:text-8xl font-black bg-gradient-to-br from-primary to-accent bg-clip-text text-transparent">
                     LH
@@ -113,10 +113,10 @@ export function AboutSection() {
                   <span className="text-sm md:text-base text-muted-foreground font-mono">Developer</span>
                 </div>
               </div>
-              <div className="absolute top-6 -right-5 bg-card border border-border rounded-lg px-3.5 py-2 text-sm font-mono text-emerald-400 shadow-lg transition-transform duration-300 hover:-translate-y-1">
+              <div className="absolute top-6 -right-5 bg-card border border-border rounded-lg px-3.5 py-2 text-sm font-mono text-[#68795d] shadow-lg transition-transform duration-300 hover:-translate-y-1">
                 Vue.js
               </div>
-              <div className="absolute bottom-8 -left-5 bg-card border border-border rounded-lg px-3.5 py-2 text-sm font-mono text-cyan-400 shadow-lg transition-transform duration-300 hover:-translate-y-1">
+              <div className="absolute bottom-8 -left-5 bg-card border border-border rounded-lg px-3.5 py-2 text-sm font-mono text-[#9b5f3d] shadow-lg transition-transform duration-300 hover:-translate-y-1">
                 Go Fiber
               </div>
             </div>

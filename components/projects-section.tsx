@@ -11,7 +11,7 @@ const projects = [
     description:
       "Built with Vue.js and Go Fiber v3. Features user authentication, listing management, search & filter, and a responsive design backed by Oracle Database.",
     tech: ["Vue.js", "Go", "Fiber v3", "Oracle DB"],
-    gradient: "from-cyan-500 to-blue-600",
+    gradient: "from-[#9b5f3d] to-[#caa26a]",
     featured: true,
     number: "01",
     githubUrl: "https://github.com/LyhengLT/nomads-clone",
@@ -23,7 +23,7 @@ const projects = [
     description:
       "A meticulous WIP.co clone in vanilla HTML, CSS, and JS. Demonstrates mastery of core web fundamentals without reaching for a framework.",
     tech: ["HTML", "CSS", "JavaScript"],
-    gradient: "from-pink-500 to-rose-600",
+    gradient: "from-[#a65f4a] to-[#d6a071]",
     featured: false,
     number: "02",
     githubUrl: null,
@@ -35,7 +35,7 @@ const projects = [
     description:
       "Cambodian jobs & classifieds site clone with a modular REST API architecture built in Go Fiber v3 and a Vue.js frontend.",
     tech: ["Vue.js", "Go", "Fiber v3", "REST API"],
-    gradient: "from-emerald-500 to-teal-600",
+    gradient: "from-[#68795d] to-[#a4a86f]",
     featured: false,
     number: "03",
     githubUrl: "https://github.com/LyhengLT/bongthom-clone",
@@ -47,7 +47,7 @@ const projects = [
     description:
       "Remote jobs board built with clean, modular vanilla JS — separation of concerns, reusable components, and REST API integration from scratch.",
     tech: ["JavaScript", "HTML", "CSS", "REST API"],
-    gradient: "from-violet-500 to-purple-600",
+    gradient: "from-[#374151] to-[#8f6b45]",
     featured: false,
     number: "04",
     githubUrl: "https://github.com/LyhengLT/remoteok-clone",
@@ -110,7 +110,7 @@ export function ProjectsSection() {
                   </span>
                   <div className="flex items-center gap-2">
                     {project.featured && (
-                      <span className="flex items-center gap-1 px-3 py-1.5 bg-amber-500/10 border border-amber-500/20 rounded-full text-amber-400 text-sm font-semibold">
+                      <span className="flex items-center gap-1 px-3 py-1.5 bg-[#b4833f]/10 border border-[#b4833f]/20 rounded-full text-[#8f6b45] text-sm font-semibold">
                         <Star className="w-3.5 h-3.5 fill-current" />
                         Featured
                       </span>

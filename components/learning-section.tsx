@@ -10,9 +10,9 @@ const learning = [
     description: "Concurrency, interfaces, and high-performance backend APIs with Fiber.",
     icon: Code,
     progress: 75,
-    gradient: "from-cyan-500 to-blue-600",
-    color: "text-cyan-400",
-    bg: "bg-cyan-400/10",
+    gradient: "from-[#9b5f3d] to-[#c18455]",
+    color: "text-[#9b5f3d]",
+    bg: "bg-[#9b5f3d]/10",
     status: "Active",
   },
   {
@@ -20,9 +20,9 @@ const learning = [
     description: "Normalization, query optimization, indexing, and advanced SQL patterns.",
     icon: Database,
     progress: 60,
-    gradient: "from-orange-500 to-red-500",
-    color: "text-orange-400",
-    bg: "bg-orange-400/10",
+    gradient: "from-[#8f6b45] to-[#caa26a]",
+    color: "text-[#8f6b45]",
+    bg: "bg-[#8f6b45]/10",
     status: "Active",
   },
   {
@@ -30,9 +30,9 @@ const learning = [
     description: "Component architecture, state management, and performance patterns.",
     icon: BookOpen,
     progress: 80,
-    gradient: "from-purple-500 to-pink-500",
-    color: "text-purple-400",
-    bg: "bg-purple-400/10",
+    gradient: "from-[#a65f4a] to-[#d6a071]",
+    color: "text-[#a65f4a]",
+    bg: "bg-[#a65f4a]/10",
     status: "Ongoing",
   },
   {
@@ -40,17 +40,17 @@ const learning = [
     description: "Architecting scalable systems, APIs, and distributed services.",
     icon: Zap,
     progress: 30,
-    gradient: "from-emerald-500 to-teal-500",
-    color: "text-emerald-400",
-    bg: "bg-emerald-400/10",
+    gradient: "from-[#68795d] to-[#a4a86f]",
+    color: "text-[#68795d]",
+    bg: "bg-[#68795d]/10",
     status: "Starting",
   },
 ]
 
 const statusStyle: Record<string, string> = {
-  Active:   "text-emerald-400 bg-emerald-400/10 border-emerald-400/20",
-  Ongoing:  "text-cyan-400 bg-cyan-400/10 border-cyan-400/20",
-  Starting: "text-amber-400 bg-amber-400/10 border-amber-400/20",
+  Active:   "text-[#68795d] bg-[#68795d]/10 border-[#68795d]/20",
+  Ongoing:  "text-[#9b5f3d] bg-[#9b5f3d]/10 border-[#9b5f3d]/20",
+  Starting: "text-[#8f6b45] bg-[#8f6b45]/10 border-[#8f6b45]/20",
 }
 
 export function LearningSection() {
