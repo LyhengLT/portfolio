@@ -54,6 +54,17 @@ const techStack = [
   },
 ]
 
+const marqueeItems = [
+  "Vue.js",
+  "Go Fiber",
+  "REST APIs",
+  "Oracle DB",
+  "JavaScript",
+  "Responsive UI",
+  "Git",
+  "Clean Architecture",
+]
+
 export function TechStackSection() {
   const sectionRef = useRef<HTMLElement>(null)
 
@@ -109,6 +120,29 @@ export function TechStackSection() {
           <p className="reveal section-subtitle text-muted-foreground">
             Technologies I use to build real applications
           </p>
+        </div>
+
+        <div className="reveal mb-12 space-y-3">
+          <div className="marquee-shell">
+            <div className="marquee-track animate-marquee-left">
+              {[...marqueeItems, ...marqueeItems].map((item, index) => (
+                <span key={`${item}-top-${index}`} className="marquee-chip">
+                  <span className="h-2 w-2 rounded-full bg-primary" />
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="marquee-shell">
+            <div className="marquee-track animate-marquee-right">
+              {[...marqueeItems.slice().reverse(), ...marqueeItems.slice().reverse()].map((item, index) => (
+                <span key={`${item}-bottom-${index}`} className="marquee-chip">
+                  <span className="h-2 w-2 rounded-full bg-accent" />
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">

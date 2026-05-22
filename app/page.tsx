@@ -6,10 +6,12 @@ import { ProjectsSection } from "@/components/projects-section"
 import { LearningSection } from "@/components/learning-section"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
+import { AmbientEffects } from "@/components/ambient-effects"
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-background">
+      <AmbientEffects />
       <Navigation />
       <HeroSection />
       <AboutSection />

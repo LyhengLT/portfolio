@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-import type { CSSProperties } from "react"
+import type { CSSProperties, MouseEvent } from "react"
 import { ExternalLink, Github, Star, Lock } from "lucide-react"
 
 const projects = [
@@ -12,6 +12,7 @@ const projects = [
       "Built with Vue.js and Go Fiber v3. Features user authentication, listing management, search & filter, and a responsive design backed by Oracle Database.",
     tech: ["Vue.js", "Go", "Fiber v3", "Oracle DB"],
     gradient: "from-[#9b5f3d] to-[#caa26a]",
+    previewColor: "#9b5f3d",
     featured: true,
     number: "01",
     githubUrl: "https://github.com/LyhengLT/nomads-clone",
@@ -24,6 +25,7 @@ const projects = [
       "A meticulous WIP.co clone in vanilla HTML, CSS, and JS. Demonstrates mastery of core web fundamentals without reaching for a framework.",
     tech: ["HTML", "CSS", "JavaScript"],
     gradient: "from-[#a65f4a] to-[#d6a071]",
+    previewColor: "#a65f4a",
     featured: false,
     number: "02",
     githubUrl: null,
@@ -36,6 +38,7 @@ const projects = [
       "Cambodian jobs & classifieds site clone with a modular REST API architecture built in Go Fiber v3 and a Vue.js frontend.",
     tech: ["Vue.js", "Go", "Fiber v3", "REST API"],
     gradient: "from-[#68795d] to-[#a4a86f]",
+    previewColor: "#68795d",
     featured: false,
     number: "03",
     githubUrl: "https://github.com/LyhengLT/bongthom-clone",
@@ -48,6 +51,7 @@ const projects = [
       "Remote jobs board built with clean, modular vanilla JS — separation of concerns, reusable components, and REST API integration from scratch.",
     tech: ["JavaScript", "HTML", "CSS", "REST API"],
     gradient: "from-[#374151] to-[#8f6b45]",
+    previewColor: "#374151",
     featured: false,
     number: "04",
     githubUrl: "https://github.com/LyhengLT/remoteok-clone",
@@ -57,6 +61,28 @@ const projects = [
 
 export function ProjectsSection() {
   const sectionRef = useRef<HTMLElement>(null)
+
+  const handleTiltMove = (event: MouseEvent<HTMLDivElement>) => {
+    const card = event.currentTarget
+    const rect = card.getBoundingClientRect()
+    const x = event.clientX - rect.left
+    const y = event.clientY - rect.top
+    const rotateY = ((x / rect.width) - 0.5) * 9
+    const rotateX = ((y / rect.height) - 0.5) * -9
+
+    card.style.setProperty("--rx", `${rotateX.toFixed(2)}deg`)
+    card.style.setProperty("--ry", `${rotateY.toFixed(2)}deg`)
+    card.style.setProperty("--mx", `${((x / rect.width) * 100).toFixed(2)}%`)
+    card.style.setProperty("--my", `${((y / rect.height) * 100).toFixed(2)}%`)
+  }
+
+  const resetTilt = (event: MouseEvent<HTMLDivElement>) => {
+    const card = event.currentTarget
+    card.style.setProperty("--rx", "0deg")
+    card.style.setProperty("--ry", "0deg")
+    card.style.setProperty("--mx", "50%")
+    card.style.setProperty("--my", "50%")
+  }
 
   useEffect(() => {
     const section = sectionRef.current
@@ -102,7 +128,24 @@ export function ProjectsSection() {
               className="reveal group"
               style={{ "--reveal-delay": `${i * 90}ms` } as CSSProperties}
             >
-              <div className="modern-card bg-card border border-border rounded-2xl p-7 md:p-9 h-full transition-all duration-300 hover:border-primary/40 hover:shadow-2xl hover:shadow-black/25 hover:-translate-y-2">
+              <div
+                className="modern-card tilt-card bg-card border border-border rounded-2xl p-5 md:p-6 h-full transition-all duration-300 hover:border-primary/40 hover:shadow-2xl hover:shadow-black/20"
+                onMouseMove={handleTiltMove}
+                onMouseLeave={resetTilt}
+              >
+                <div
+                  className="project-preview mb-7"
+                  style={{ color: project.previewColor } as CSSProperties}
+                  aria-hidden="true"
+                >
+                  <div className="project-preview-bar">
+                    <span className="project-preview-dot" />
+                    <span className="project-preview-dot opacity-70" />
+                    <span className="project-preview-dot opacity-40" />
+                  </div>
+                  <span className="project-preview-shape" />
+                </div>
+
                 {/* Top row */}
                 <div className="flex items-start justify-between mb-6">
                   <span className={`text-6xl md:text-7xl font-black bg-gradient-to-r ${project.gradient} bg-clip-text text-transparent opacity-40 group-hover:opacity-80 transition-opacity leading-none`}>
