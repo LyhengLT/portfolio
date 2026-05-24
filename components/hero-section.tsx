@@ -20,6 +20,12 @@ const stats = [
 const heroLetters = "Lyheng".split("")
 const signalItems = ["Vue.js interfaces", "Go Fiber APIs", "Oracle Database", "Real project clones"]
 
+const terminalLines = [
+  { prompt: "lyheng", command: "build", result: "portfolio --warm-studio" },
+  { prompt: "stack", command: "ship", result: "vue + go + oracle" },
+  { prompt: "status", command: "ready", result: "open to opportunities" },
+]
+
 function useTypewriter(words: string[], speed = 80, pause = 2200) {
   const [displayed, setDisplayed] = useState("")
   const [wordIndex, setWordIndex] = useState(0)
@@ -165,16 +171,26 @@ export function HeroSection() {
                 <Sparkles className="h-4 w-4" />
                 Building Mode
               </div>
-              <h3 className="mb-4 text-3xl md:text-4xl font-black leading-[0.98] text-foreground">
+              <h3 className="mb-4 text-2xl md:text-3xl font-black leading-[0.98] text-foreground">
                 Interfaces with motion, APIs with structure.
               </h3>
               <div className="grid grid-cols-2 gap-3">
                 {signalItems.map((item) => (
-                  <div key={item} className="rounded-lg border border-border/70 bg-background/55 px-3 py-3 text-sm font-bold text-foreground/75">
+                  <div key={item} className="hero-micro-card rounded-lg border border-border/70 bg-background/55 px-3 py-2.5 text-sm font-bold text-foreground/75 shadow-sm shadow-primary/5">
                     {item}
                   </div>
                 ))}
               </div>
+            </div>
+
+            <div className="studio-terminal mb-5">
+              {terminalLines.map((line) => (
+                <div key={line.prompt} className="terminal-line">
+                  <span className="terminal-prompt">{line.prompt}</span>
+                  <span className="terminal-token">{line.command}</span>
+                  <span className="terminal-accent">{line.result}</span>
+                </div>
+              ))}
             </div>
 
             <a
