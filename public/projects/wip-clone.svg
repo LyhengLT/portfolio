@@ -1,0 +1,16 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" rx="42" fill="#f3dfca"/>
+  <rect x="78" y="74" width="1044" height="572" rx="36" fill="#fff8eb"/>
+  <rect x="124" y="132" width="250" height="56" rx="28" fill="#a65f4a"/>
+  <rect x="124" y="230" width="448" height="52" rx="18" fill="#2f2218"/>
+  <rect x="124" y="306" width="362" height="26" rx="13" fill="#d6a071"/>
+  <rect x="124" y="356" width="420" height="26" rx="13" fill="#e8d2b5"/>
+  <rect x="124" y="430" width="164" height="58" rx="18" fill="#a65f4a"/>
+  <rect x="652" y="170" width="350" height="350" rx="38" fill="#ead2b5"/>
+  <rect x="704" y="226" width="246" height="44" rx="16" fill="#a65f4a"/>
+  <rect x="704" y="306" width="246" height="132" rx="24" fill="#fff4df"/>
+  <path d="M728 372H928" stroke="#d6a071" stroke-width="18" stroke-linecap="round"/>
+  <path d="M728 414H866" stroke="#e7c5a6" stroke-width="18" stroke-linecap="round"/>
+  <text x="124" y="564" fill="#2f2218" font-family="Arial, sans-serif" font-size="58" font-weight="800">WIP Clone</text>
+  <text x="124" y="610" fill="#a65f4a" font-family="Arial, sans-serif" font-size="26" font-weight="700">Pixel-perfect HTML/CSS/JS interface</text>
+</svg>

@@ -1,0 +1,19 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" rx="42" fill="#edf0df"/>
+  <rect x="70" y="74" width="1060" height="572" rx="34" fill="#fff9ec"/>
+  <rect x="112" y="124" width="976" height="74" rx="22" fill="#68795d"/>
+  <rect x="148" y="150" width="180" height="22" rx="11" fill="#f5ead6"/>
+  <rect x="800" y="146" width="92" height="30" rx="15" fill="#a4a86f"/>
+  <rect x="912" y="146" width="120" height="30" rx="15" fill="#d9c29c"/>
+  <rect x="132" y="246" width="350" height="316" rx="30" fill="#e8d8bb"/>
+  <rect x="170" y="284" width="244" height="28" rx="14" fill="#3d3328"/>
+  <rect x="170" y="346" width="262" height="20" rx="10" fill="#68795d"/>
+  <rect x="170" y="392" width="204" height="20" rx="10" fill="#b7bd91"/>
+  <rect x="534" y="246" width="534" height="78" rx="24" fill="#f2e6cf"/>
+  <rect x="574" y="274" width="296" height="22" rx="11" fill="#68795d"/>
+  <rect x="534" y="362" width="534" height="78" rx="24" fill="#f2e6cf"/>
+  <rect x="574" y="390" width="330" height="22" rx="11" fill="#9b5f3d"/>
+  <rect x="534" y="478" width="534" height="78" rx="24" fill="#f2e6cf"/>
+  <rect x="574" y="506" width="260" height="22" rx="11" fill="#68795d"/>
+  <text x="132" y="622" fill="#313326" font-family="Arial, sans-serif" font-size="54" font-weight="800">BongThom Clone</text>
+</svg>

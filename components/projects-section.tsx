@@ -13,6 +13,7 @@ const projects = [
     tech: ["Vue.js", "Go", "Fiber v3", "Oracle DB"],
     gradient: "from-[#9b5f3d] to-[#caa26a]",
     previewColor: "#9b5f3d",
+    image: "/portfolio/projects/nomads-go.svg",
     featured: true,
     number: "01",
     githubUrl: "https://github.com/LyhengLT/nomads-clone",
@@ -26,6 +27,7 @@ const projects = [
     tech: ["HTML", "CSS", "JavaScript"],
     gradient: "from-[#a65f4a] to-[#d6a071]",
     previewColor: "#a65f4a",
+    image: "/portfolio/projects/wip-clone.svg",
     featured: false,
     number: "02",
     githubUrl: null,
@@ -39,6 +41,7 @@ const projects = [
     tech: ["Vue.js", "Go", "Fiber v3", "REST API"],
     gradient: "from-[#68795d] to-[#a4a86f]",
     previewColor: "#68795d",
+    image: "/portfolio/projects/bongthom-clone.svg",
     featured: false,
     number: "03",
     githubUrl: "https://github.com/LyhengLT/bongthom-clone",
@@ -52,6 +55,7 @@ const projects = [
     tech: ["JavaScript", "HTML", "CSS", "REST API"],
     gradient: "from-[#374151] to-[#8f6b45]",
     previewColor: "#374151",
+    image: "/portfolio/projects/remoteok-clone.svg",
     featured: false,
     number: "04",
     githubUrl: "https://github.com/LyhengLT/remoteok-clone",
@@ -143,6 +147,12 @@ export function ProjectsSection() {
                     <span className="project-preview-dot opacity-70" />
                     <span className="project-preview-dot opacity-40" />
                   </div>
+                  <img
+                    src={project.image}
+                    alt={`${project.title} project preview`}
+                    className="project-preview-image"
+                    loading="lazy"
+                  />
                   <span className="project-preview-label">{project.tagline}</span>
                   <span className="project-preview-orbit project-preview-orbit-a" />
                   <span className="project-preview-orbit project-preview-orbit-b" />

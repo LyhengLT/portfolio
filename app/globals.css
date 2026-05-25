@@ -1045,27 +1045,42 @@
 .project-preview::before {
   content: '';
   position: absolute;
-  inset: 3.1rem 1.05rem auto;
-  height: 2.4rem;
-  border-radius: 0.75rem;
+  inset: 2.45rem 0 0;
+  z-index: 2;
   background:
-    linear-gradient(90deg, currentColor, transparent 72%),
-    rgba(255, 250, 235, 0.52);
-  opacity: 0.18;
+    linear-gradient(180deg, rgba(255, 248, 232, 0.05), transparent 35%, rgba(39, 28, 19, 0.16)),
+    radial-gradient(circle at 74% 28%, rgba(255, 255, 255, 0.34), transparent 22%);
+  pointer-events: none;
 }
 
 .project-preview::after {
   content: '';
   position: absolute;
-  inset: 3.6rem 1.25rem 1.25rem;
-  border-radius: 0.7rem;
-  background:
-    linear-gradient(90deg, currentColor 24%, transparent 24% 31%, currentColor 31% 58%, transparent 58%),
-    linear-gradient(currentColor 0 0);
-  background-size: 100% 0.7rem, 72% 0.7rem;
-  background-position: 0 0, 0 2rem;
-  background-repeat: no-repeat;
-  color: oklch(0.35 0.045 58 / 0.18);
+  inset-block: 2.45rem 0;
+  left: 0;
+  z-index: 3;
+  width: 34%;
+  background: linear-gradient(90deg, transparent, rgba(255, 250, 235, 0.24), transparent);
+  animation: glow-sweep 6.4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.project-preview-image {
+  position: absolute;
+  inset: 2.45rem 0 0;
+  z-index: 1;
+  width: 100%;
+  height: calc(100% - 2.45rem);
+  object-fit: cover;
+  opacity: 0.92;
+  transform: scale(1.015);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease, opacity 0.5s ease;
+}
+
+.group:hover .project-preview-image {
+  opacity: 1;
+  filter: saturate(1.08) contrast(1.02);
+  transform: scale(1.065);
 }
 
 .project-preview-bar {
@@ -1088,6 +1103,7 @@
   position: absolute;
   right: 1.3rem;
   bottom: 1.3rem;
+  z-index: 4;
   width: 5.5rem;
   aspect-ratio: 1;
   border-radius: 1.2rem;
@@ -1101,7 +1117,7 @@
   position: absolute;
   right: 3.15rem;
   bottom: 3.15rem;
-  z-index: 1;
+  z-index: 4;
   width: 0.58rem;
   height: 0.58rem;
   border-radius: 999px;
@@ -1122,7 +1138,7 @@
   position: absolute;
   left: 1rem;
   bottom: 1rem;
-  z-index: 1;
+  z-index: 4;
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;

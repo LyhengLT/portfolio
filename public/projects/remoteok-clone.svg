@@ -1,0 +1,17 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" rx="42" fill="#e8dfd2"/>
+  <rect x="74" y="74" width="1052" height="572" rx="36" fill="#fff8eb"/>
+  <rect x="116" y="120" width="968" height="92" rx="28" fill="#374151"/>
+  <text x="156" y="181" fill="#f5ead6" font-family="Arial, sans-serif" font-size="42" font-weight="900">RemoteOK</text>
+  <rect x="806" y="142" width="220" height="48" rx="24" fill="#8f6b45"/>
+  <rect x="120" y="266" width="960" height="84" rx="24" fill="#f0e2ca"/>
+  <rect x="158" y="296" width="254" height="24" rx="12" fill="#374151"/>
+  <rect x="778" y="292" width="142" height="32" rx="16" fill="#68795d"/>
+  <rect x="120" y="386" width="960" height="84" rx="24" fill="#f0e2ca"/>
+  <rect x="158" y="416" width="312" height="24" rx="12" fill="#8f6b45"/>
+  <rect x="778" y="412" width="142" height="32" rx="16" fill="#a4a86f"/>
+  <rect x="120" y="506" width="960" height="84" rx="24" fill="#f0e2ca"/>
+  <rect x="158" y="536" width="282" height="24" rx="12" fill="#374151"/>
+  <rect x="778" y="532" width="142" height="32" rx="16" fill="#8f6b45"/>
+  <text x="120" y="638" fill="#374151" font-family="Arial, sans-serif" font-size="44" font-weight="800">Remote jobs board with modular JavaScript</text>
+</svg>

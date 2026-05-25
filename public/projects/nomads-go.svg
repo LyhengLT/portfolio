@@ -1,0 +1,18 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" rx="42" fill="#f4e5cb"/>
+  <rect x="70" y="78" width="1060" height="564" rx="34" fill="#fff9eb"/>
+  <rect x="70" y="78" width="1060" height="88" rx="34" fill="#9b5f3d"/>
+  <circle cx="120" cy="122" r="12" fill="#f4d2a0"/>
+  <circle cx="156" cy="122" r="12" fill="#d6a071"/>
+  <circle cx="192" cy="122" r="12" fill="#68795d"/>
+  <rect x="102" y="210" width="460" height="288" rx="28" fill="#d9b17a"/>
+  <path d="M102 443L242 318L348 408L420 348L562 474V498H102V443Z" fill="#68795d"/>
+  <circle cx="450" cy="282" r="42" fill="#f7ecd9"/>
+  <rect x="620" y="218" width="390" height="34" rx="17" fill="#3f2c1d"/>
+  <rect x="620" y="282" width="470" height="24" rx="12" fill="#caa26a"/>
+  <rect x="620" y="328" width="340" height="24" rx="12" fill="#dfc8a9"/>
+  <rect x="620" y="404" width="148" height="58" rx="18" fill="#9b5f3d"/>
+  <rect x="792" y="404" width="148" height="58" rx="18" fill="#68795d"/>
+  <text x="620" y="534" fill="#3f2c1d" font-family="Arial, sans-serif" font-size="58" font-weight="800">Nomads Go</text>
+  <text x="620" y="580" fill="#8f6b45" font-family="Arial, sans-serif" font-size="26" font-weight="700">Travel listings with Vue + Go Fiber</text>
+</svg>
