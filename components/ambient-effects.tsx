@@ -14,6 +14,7 @@ const sections = [
 
 export function AmbientEffects() {
   const [activeSection, setActiveSection] = useState("hero")
+  const [scrollProgress, setScrollProgress] = useState(0)
   const [cursor, setCursor] = useState({ x: 0, y: 0, visible: false })
 
   const grains = useMemo(
@@ -31,6 +32,10 @@ export function AmbientEffects() {
   useEffect(() => {
     const updateCursor = (event: PointerEvent) => {
       setCursor({ x: event.clientX, y: event.clientY, visible: true })
+      document.documentElement.style.setProperty("--mouse-x", `${event.clientX}px`)
+      document.documentElement.style.setProperty("--mouse-y", `${event.clientY}px`)
+      document.documentElement.style.setProperty("--mouse-pan-x", `${((event.clientX / window.innerWidth) - 0.5) * 24}px`)
+      document.documentElement.style.setProperty("--mouse-pan-y", `${((event.clientY / window.innerHeight) - 0.5) * 24}px`)
     }
     const hideCursor = () => setCursor((current) => ({ ...current, visible: false }))
 
@@ -40,6 +45,24 @@ export function AmbientEffects() {
     return () => {
       window.removeEventListener("pointermove", updateCursor)
       window.removeEventListener("pointerleave", hideCursor)
+    }
+  }, [])
+
+  useEffect(() => {
+    const updateProgress = () => {
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight
+      const progress = maxScroll > 0 ? Math.min(window.scrollY / maxScroll, 1) : 0
+      setScrollProgress(Math.round(progress * 100))
+      document.documentElement.style.setProperty("--page-progress", progress.toString())
+    }
+
+    updateProgress()
+    window.addEventListener("scroll", updateProgress, { passive: true })
+    window.addEventListener("resize", updateProgress)
+
+    return () => {
+      window.removeEventListener("scroll", updateProgress)
+      window.removeEventListener("resize", updateProgress)
     }
   }, [])
 
@@ -65,6 +88,8 @@ export function AmbientEffects() {
   return (
     <>
       <div className="ambient-stage" aria-hidden="true">
+        <div className="ambient-beam ambient-beam-a" />
+        <div className="ambient-beam ambient-beam-b" />
         <div className="ambient-wash ambient-wash-a" />
         <div className="ambient-wash ambient-wash-b" />
         <div className="ambient-wash ambient-wash-c" />
@@ -90,6 +115,19 @@ export function AmbientEffects() {
         style={{ "--cursor-x": `${cursor.x}px`, "--cursor-y": `${cursor.y}px` } as CSSProperties}
         aria-hidden="true"
       />
+
+      <div
+        className="live-action-dock"
+        style={{ "--dock-progress": `${scrollProgress}%` } as CSSProperties}
+        aria-label={`Current section ${activeSection}, page progress ${scrollProgress}%`}
+      >
+        <span className="live-action-dot" />
+        <span className="live-action-section">{sections.find((section) => section.id === activeSection)?.label}</span>
+        <span className="live-action-track">
+          <span className="live-action-fill" />
+        </span>
+        <span className="live-action-percent">{scrollProgress}%</span>
+      </div>
 
       <aside className="section-rail" aria-label="Section navigation">
         <div className="section-rail-line" />

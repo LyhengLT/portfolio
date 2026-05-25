@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import type { CSSProperties } from "react"
-import { Mail, Github, ChevronDown, MapPin, GraduationCap, Sparkles, ArrowUpRight } from "lucide-react"
+import { Mail, Github, ChevronDown, MapPin, GraduationCap, Sparkles, ArrowUpRight, Activity } from "lucide-react"
 
 const roles = [
   "Full-Stack Developer",
@@ -24,6 +24,13 @@ const terminalLines = [
   { prompt: "lyheng", command: "build", result: "portfolio --warm-studio" },
   { prompt: "stack", command: "ship", result: "vue + go + oracle" },
   { prompt: "status", command: "ready", result: "open to opportunities" },
+]
+
+const liveActions = [
+  "Animating section reveals",
+  "Syncing project previews",
+  "Polishing warm studio UI",
+  "Optimizing scroll motion",
 ]
 
 function useTypewriter(words: string[], speed = 80, pause = 2200) {
@@ -57,8 +64,17 @@ function useTypewriter(words: string[], speed = 80, pause = 2200) {
 export function HeroSection() {
   const typedText = useTypewriter(roles)
   const [mounted, setMounted] = useState(false)
+  const [actionIndex, setActionIndex] = useState(0)
 
   useEffect(() => { setMounted(true) }, [])
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setActionIndex((index) => (index + 1) % liveActions.length)
+    }, 2200)
+
+    return () => window.clearInterval(interval)
+  }, [])
 
   return (
     <section id="hero" className="min-h-screen flex flex-col justify-center relative overflow-hidden px-6 lg:px-12 pt-24 pb-14 grid-bg">
@@ -184,6 +200,18 @@ export function HeroSection() {
             </div>
 
             <div className="studio-terminal mb-5">
+              <div className="terminal-live-row">
+                <span className="terminal-live-icon">
+                  <Activity className="h-3.5 w-3.5" />
+                </span>
+                <span className="terminal-live-text">{liveActions[actionIndex]}</span>
+                <span className="terminal-equalizer" aria-hidden="true">
+                  <span />
+                  <span />
+                  <span />
+                  <span />
+                </span>
+              </div>
               {terminalLines.map((line) => (
                 <div key={line.prompt} className="terminal-line">
                   <span className="terminal-prompt">{line.prompt}</span>

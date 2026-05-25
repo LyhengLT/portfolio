@@ -144,6 +144,8 @@ export function ProjectsSection() {
                     <span className="project-preview-dot opacity-40" />
                   </div>
                   <span className="project-preview-label">{project.tagline}</span>
+                  <span className="project-preview-orbit project-preview-orbit-a" />
+                  <span className="project-preview-orbit project-preview-orbit-b" />
                   <span className="project-preview-shape" />
                 </div>
 
