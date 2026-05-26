@@ -71,8 +71,17 @@ export function HeroSection() {
   const typedText = useTypewriter(roles)
   const [mounted, setMounted] = useState(false)
   const [actionIndex, setActionIndex] = useState(0)
+  const [buildNoteDate, setBuildNoteDate] = useState("Today")
 
-  useEffect(() => { setMounted(true) }, [])
+  useEffect(() => {
+    setMounted(true)
+    setBuildNoteDate(
+      new Intl.DateTimeFormat("en-US", {
+        month: "long",
+        day: "numeric",
+      }).format(new Date())
+    )
+  }, [])
 
   useEffect(() => {
     const interval = window.setInterval(() => {
@@ -110,7 +119,7 @@ export function HeroSection() {
                   <span className="today-update-icon">
                     <CalendarDays className="h-4 w-4" />
                   </span>
-                  <span>May 26 Build Note</span>
+                  <span>{buildNoteDate} Build Note</span>
                   <span className="today-update-live">
                     <WandSparkles className="h-3.5 w-3.5" />
                     Live refresh
