@@ -25,6 +25,22 @@ const runningRows = [
   "PORTFOLIO DEVELOPER FULL STACK CAMBODIA CLEAN CODE",
 ]
 
+const typedPopWords = [
+  { text: "const builder", left: "13%", top: "29%", delay: "-1s", width: "13ch", rotate: "-5deg" },
+  { text: "deploy()", left: "71%", top: "27%", delay: "-7s", width: "8ch", rotate: "6deg" },
+  { text: "UI motion", left: "23%", top: "72%", delay: "-12s", width: "9ch", rotate: "4deg" },
+  { text: "api.ready", left: "63%", top: "68%", delay: "-17s", width: "9ch", rotate: "-7deg" },
+  { text: "ship today", left: "47%", top: "44%", delay: "-22s", width: "10ch", rotate: "2deg" },
+]
+
+const popLetters = [
+  { text: "L", left: "6%", top: "39%", delay: "-3s" },
+  { text: "H", left: "87%", top: "18%", delay: "-8s" },
+  { text: "{ }", left: "81%", top: "74%", delay: "-13s" },
+  { text: "<>", left: "32%", top: "13%", delay: "-18s" },
+  { text: "01", left: "52%", top: "86%", delay: "-23s" },
+]
+
 export function AmbientEffects() {
   const [activeSection, setActiveSection] = useState("hero")
   const [scrollProgress, setScrollProgress] = useState(0)
@@ -135,6 +151,38 @@ export function AmbientEffects() {
                 ))}
               </div>
             </div>
+          ))}
+          {typedPopWords.map((word) => (
+            <span
+              key={word.text}
+              className="ambient-type-pop"
+              style={
+                {
+                  "--type-left": word.left,
+                  "--type-top": word.top,
+                  "--type-delay": word.delay,
+                  "--type-width": word.width,
+                  "--type-rotate": word.rotate,
+                } as CSSProperties
+              }
+            >
+              <span className="ambient-type-pop-text">{word.text}</span>
+            </span>
+          ))}
+          {popLetters.map((letter) => (
+            <span
+              key={letter.text}
+              className="ambient-letter-pop"
+              style={
+                {
+                  "--letter-left": letter.left,
+                  "--letter-top": letter.top,
+                  "--letter-delay": letter.delay,
+                } as CSSProperties
+              }
+            >
+              {letter.text}
+            </span>
           ))}
         </div>
         <div className="paper-grain">

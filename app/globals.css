@@ -386,6 +386,48 @@ main > footer {
   }
 }
 
+@keyframes ambient-type-pop {
+  0%, 5% {
+    opacity: 0;
+    transform: translate3d(0, 1rem, 0) rotate(var(--type-rotate)) scale(0.92);
+  }
+  12%, 42% {
+    opacity: 0.7;
+    transform: translate3d(0, 0, 0) rotate(var(--type-rotate)) scale(1);
+  }
+  56%, 100% {
+    opacity: 0;
+    transform: translate3d(0, -0.9rem, 0) rotate(var(--type-rotate)) scale(0.96);
+  }
+}
+
+@keyframes ambient-type-reveal {
+  0%, 8% { max-width: 0; }
+  24%, 48% { max-width: var(--type-width); }
+  62%, 100% { max-width: 0; }
+}
+
+@keyframes ambient-caret-blink {
+  0%, 100% { opacity: 0; }
+  15%, 42% { opacity: 1; }
+  28% { opacity: 0.2; }
+}
+
+@keyframes ambient-letter-pop {
+  0%, 100% {
+    opacity: 0;
+    transform: translate3d(0, 1rem, 0) rotate(-8deg) scale(0.76);
+  }
+  13%, 34% {
+    opacity: 0.38;
+    transform: translate3d(0, 0, 0) rotate(5deg) scale(1);
+  }
+  46% {
+    opacity: 0;
+    transform: translate3d(0, -1.2rem, 0) rotate(13deg) scale(1.18);
+  }
+}
+
 @keyframes progress-fill {
   from { width: 0%; }
 }
@@ -788,6 +830,68 @@ main > footer {
 .ambient-word-runner-2 .ambient-word-track {
   animation-direction: reverse;
   animation-duration: 42s;
+}
+
+.ambient-type-pop {
+  position: absolute;
+  left: var(--type-left);
+  top: var(--type-top);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  max-width: min(52vw, 18rem);
+  overflow: hidden;
+  border: 1px solid rgba(128, 86, 50, 0.13);
+  border-radius: 0.6rem;
+  background: rgba(255, 249, 235, 0.24);
+  padding: 0.38rem 0.58rem;
+  color: rgba(88, 58, 36, 0.2);
+  font-family: var(--font-mono);
+  font-size: clamp(0.78rem, 1.7vw, 1.12rem);
+  font-weight: 950;
+  line-height: 1;
+  white-space: nowrap;
+  box-shadow: 0 14px 42px rgba(82, 52, 31, 0.06);
+  animation: ambient-type-pop 11s ease-in-out infinite;
+  animation-delay: var(--type-delay);
+}
+
+.ambient-type-pop-text {
+  display: inline-block;
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: ambient-type-reveal 11s ease-in-out infinite;
+  animation-delay: var(--type-delay);
+}
+
+.ambient-type-pop::after {
+  content: '';
+  display: inline-block;
+  width: 0.12rem;
+  height: 0.92em;
+  margin-left: 0.22rem;
+  border-radius: 999px;
+  background: rgba(88, 58, 36, 0.22);
+  animation: ambient-caret-blink 11s steps(1, end) infinite;
+  animation-delay: var(--type-delay);
+}
+
+.ambient-letter-pop {
+  position: absolute;
+  left: var(--letter-left);
+  top: var(--letter-top);
+  z-index: 1;
+  color: rgba(88, 58, 36, 0.15);
+  font-family: var(--font-mono);
+  font-size: clamp(2.4rem, 8vw, 7rem);
+  font-weight: 950;
+  line-height: 0.78;
+  letter-spacing: 0;
+  white-space: nowrap;
+  text-shadow: 0 16px 48px rgba(82, 52, 31, 0.08);
+  animation: ambient-letter-pop 13s ease-in-out infinite;
+  animation-delay: var(--letter-delay);
 }
 
 .paper-grain span {
@@ -1463,6 +1567,8 @@ main > footer {
   .ambient-floating-word,
   .ambient-word-track,
   .ambient-mega-word,
+  .ambient-type-pop,
+  .ambient-letter-pop,
   .paper-grain span {
     display: none;
   }
