@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import type { CSSProperties, MouseEvent } from "react"
-import { ExternalLink, Github, Star, Lock } from "lucide-react"
+import { ExternalLink, Github, Star, Lock, CheckCircle2, Layers3 } from "lucide-react"
 
 const projects = [
   {
@@ -11,6 +11,10 @@ const projects = [
     description:
       "Built with Vue.js and Go Fiber v3. Features user authentication, listing management, search & filter, and a responsive design backed by Oracle Database.",
     tech: ["Vue.js", "Go", "Fiber v3", "Oracle DB"],
+    role: "Full-stack build",
+    timeline: "Core clone + polish",
+    highlights: ["Auth flow", "Search and filtering", "Listing dashboard"],
+    result: "A full product-style clone with frontend, backend, and database pieces working together.",
     gradient: "from-[#9b5f3d] to-[#caa26a]",
     previewColor: "#9b5f3d",
     image: "/portfolio/projects/nomads-go.svg",
@@ -25,6 +29,10 @@ const projects = [
     description:
       "A meticulous WIP.co clone in vanilla HTML, CSS, and JS. Demonstrates mastery of core web fundamentals without reaching for a framework.",
     tech: ["HTML", "CSS", "JavaScript"],
+    role: "Frontend recreation",
+    timeline: "UI precision sprint",
+    highlights: ["Responsive layout", "Interactive states", "Clean vanilla structure"],
+    result: "A focused exercise in spacing, typography, and browser-native JavaScript without framework help.",
     gradient: "from-[#a65f4a] to-[#d6a071]",
     previewColor: "#a65f4a",
     image: "/portfolio/projects/wip-clone.svg",
@@ -39,6 +47,10 @@ const projects = [
     description:
       "Cambodian jobs & classifieds site clone with a modular REST API architecture built in Go Fiber v3 and a Vue.js frontend.",
     tech: ["Vue.js", "Go", "Fiber v3", "REST API"],
+    role: "Full-stack architecture",
+    timeline: "API-first build",
+    highlights: ["Job-style data models", "REST endpoints", "Vue component views"],
+    result: "A Cambodia-focused product clone shaped around practical listing and browsing flows.",
     gradient: "from-[#68795d] to-[#a4a86f]",
     previewColor: "#68795d",
     image: "/portfolio/projects/bongthom-clone.svg",
@@ -53,6 +65,10 @@ const projects = [
     description:
       "Remote jobs board built with clean, modular vanilla JS — separation of concerns, reusable components, and REST API integration from scratch.",
     tech: ["JavaScript", "HTML", "CSS", "REST API"],
+    role: "Frontend systems",
+    timeline: "Modular JS build",
+    highlights: ["Reusable modules", "API rendering", "Job board filtering"],
+    result: "A clean vanilla app that keeps logic, state, and UI behavior separated.",
     gradient: "from-[#374151] to-[#8f6b45]",
     previewColor: "#374151",
     image: "/portfolio/projects/remoteok-clone.svg",
@@ -185,6 +201,41 @@ export function ProjectsSection() {
                 {/* Description */}
                 <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-6">
                   {project.description}
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+                  <div className="rounded-lg border border-border/60 bg-background/45 px-4 py-3">
+                    <span className="mb-1 flex items-center gap-2 text-xs font-black uppercase text-muted-foreground">
+                      <Layers3 className="h-3.5 w-3.5 text-primary" />
+                      Role
+                    </span>
+                    <p className="text-base font-black text-foreground">{project.role}</p>
+                  </div>
+                  <div className="rounded-lg border border-border/60 bg-background/45 px-4 py-3">
+                    <span className="mb-1 flex items-center gap-2 text-xs font-black uppercase text-muted-foreground">
+                      <Star className="h-3.5 w-3.5 text-[#8f6b45]" />
+                      Focus
+                    </span>
+                    <p className="text-base font-black text-foreground">{project.timeline}</p>
+                  </div>
+                </div>
+
+                <div className="mb-6">
+                  <p className="mb-3 text-sm font-black uppercase text-muted-foreground">
+                    Key Details
+                  </p>
+                  <div className="space-y-2">
+                    {project.highlights.map((highlight) => (
+                      <div key={highlight} className="flex items-center gap-2 text-base font-semibold text-foreground/80">
+                        <CheckCircle2 className="h-4 w-4 shrink-0 text-[#68795d]" />
+                        <span>{highlight}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <p className="mb-6 rounded-lg border border-primary/15 bg-primary/8 px-4 py-3 text-base font-semibold leading-relaxed text-foreground/75">
+                  {project.result}
                 </p>
 
                 {/* Tech tags */}

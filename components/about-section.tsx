@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import type { CSSProperties } from "react"
-import { Code2, Rocket, Heart, Coffee } from "lucide-react"
+import { Code2, Rocket, Heart, Coffee, Target, GitBranch, Layers3, Gauge } from "lucide-react"
 
 const traits = [
   {
@@ -32,6 +32,29 @@ const traits = [
     description: "Every day is a chance to level up with new tools and patterns.",
     color: "text-[#b4833f]",
     bg: "bg-[#b4833f]/10",
+  },
+]
+
+const buildApproach = [
+  {
+    icon: Target,
+    title: "Product Thinking",
+    detail: "I start with the user flow, then shape the screens, data, and API around that flow.",
+  },
+  {
+    icon: GitBranch,
+    title: "Step-by-Step Delivery",
+    detail: "I break big ideas into small working milestones so every update has something real to test.",
+  },
+  {
+    icon: Layers3,
+    title: "Frontend + Backend",
+    detail: "I like building both sides because it helps me understand how the interface and data should meet.",
+  },
+  {
+    icon: Gauge,
+    title: "Readable Experiences",
+    detail: "I care about clear typography, smooth motion, responsive layouts, and code that stays easy to improve.",
   },
 ]
 
@@ -99,6 +122,17 @@ export function AboutSection() {
                 &ldquo;The best way to learn is to build something real.&rdquo;
               </p>
             </blockquote>
+
+            <div className="grid grid-cols-2 gap-3 pt-2">
+              <div className="rounded-lg border border-border/60 bg-card/70 px-4 py-3">
+                <p className="text-3xl font-black text-primary">4</p>
+                <p className="text-sm font-bold text-muted-foreground">project clones</p>
+              </div>
+              <div className="rounded-lg border border-border/60 bg-card/70 px-4 py-3">
+                <p className="text-3xl font-black text-[#68795d]">3</p>
+                <p className="text-sm font-bold text-muted-foreground">main stack layers</p>
+              </div>
+            </div>
           </div>
 
           {/* Avatar */}
@@ -120,6 +154,34 @@ export function AboutSection() {
                 Go Fiber
               </div>
             </div>
+          </div>
+        </div>
+
+        <div className="mb-20">
+          <div className="reveal mb-8">
+            <p className="section-kicker text-primary font-mono uppercase mb-3">
+              How I Build
+            </p>
+            <h3 className="text-4xl md:text-6xl font-black leading-none text-foreground">
+              Details matter from idea to deploy.
+            </h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {buildApproach.map((item, i) => (
+              <div
+                key={item.title}
+                className="reveal modern-card border border-border rounded-xl bg-card p-6 transition-all duration-300 hover:-translate-y-2 hover:border-primary/40 hover:shadow-xl hover:shadow-black/15"
+                style={{ "--reveal-delay": `${i * 70}ms` } as CSSProperties}
+              >
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <item.icon className="h-5 w-5" />
+                </div>
+                <h4 className="mb-2 text-2xl font-black text-foreground">{item.title}</h4>
+                <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+                  {item.detail}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
 
