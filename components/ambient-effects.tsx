@@ -12,6 +12,19 @@ const sections = [
   { id: "contact", label: "Contact" },
 ]
 
+const floatingWords = [
+  { text: "BUILD", left: "4%", top: "17%", delay: "-2s", duration: "24s", rotate: "-8deg" },
+  { text: "SHIP", left: "67%", top: "13%", delay: "-10s", duration: "28s", rotate: "7deg" },
+  { text: "VUE", left: "10%", top: "58%", delay: "-16s", duration: "26s", rotate: "10deg" },
+  { text: "GO", left: "77%", top: "52%", delay: "-6s", duration: "22s", rotate: "-11deg" },
+  { text: "API", left: "43%", top: "76%", delay: "-13s", duration: "30s", rotate: "5deg" },
+]
+
+const runningRows = [
+  "VUE GO FIBER ORACLE REST UI BUILD SHIP LEARN",
+  "PORTFOLIO DEVELOPER FULL STACK CAMBODIA CLEAN CODE",
+]
+
 export function AmbientEffects() {
   const [activeSection, setActiveSection] = useState("hero")
   const [scrollProgress, setScrollProgress] = useState(0)
@@ -93,6 +106,37 @@ export function AmbientEffects() {
         <div className="ambient-wash ambient-wash-a" />
         <div className="ambient-wash ambient-wash-b" />
         <div className="ambient-wash ambient-wash-c" />
+        <div className="ambient-type-layer">
+          <span className="ambient-mega-word ambient-mega-word-a">DEVELOPER</span>
+          <span className="ambient-mega-word ambient-mega-word-b">FULL STACK</span>
+          <span className="ambient-mega-word ambient-mega-word-c">LYHENG</span>
+          {floatingWords.map((word) => (
+            <span
+              key={word.text}
+              className="ambient-floating-word"
+              style={
+                {
+                  "--word-left": word.left,
+                  "--word-top": word.top,
+                  "--word-delay": word.delay,
+                  "--word-duration": word.duration,
+                  "--word-rotate": word.rotate,
+                } as CSSProperties
+              }
+            >
+              {word.text}
+            </span>
+          ))}
+          {runningRows.map((row, index) => (
+            <div key={row} className={`ambient-word-runner ambient-word-runner-${index + 1}`}>
+              <div className="ambient-word-track">
+                {Array.from({ length: 3 }, (_, repeatIndex) => (
+                  <span key={`${row}-${repeatIndex}`}>{row}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
         <div className="paper-grain">
           {grains.map((grain) => (
             <span
