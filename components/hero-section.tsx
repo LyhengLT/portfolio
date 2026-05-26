@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import type { CSSProperties } from "react"
-import { Mail, Github, ChevronDown, MapPin, GraduationCap, Sparkles, ArrowUpRight, Activity } from "lucide-react"
+import { Mail, Github, ChevronDown, MapPin, GraduationCap, Sparkles, ArrowUpRight, Activity, CalendarDays, WandSparkles } from "lucide-react"
 
 const roles = [
   "Full-Stack Developer",
@@ -31,6 +31,12 @@ const liveActions = [
   "Syncing project previews",
   "Polishing warm studio UI",
   "Optimizing scroll motion",
+]
+
+const todayUpdates = [
+  "Sharper project visuals",
+  "More readable motion",
+  "Fresh warm studio polish",
 ]
 
 function useTypewriter(words: string[], speed = 80, pause = 2200) {
@@ -89,13 +95,33 @@ export function HeroSection() {
       <div className="relative z-10 max-w-7xl w-full">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1.12fr)_minmax(22rem,0.72fr)] lg:items-end">
           <div>
-            {/* Status badge */}
-            <div className="opacity-0 animate-slide-up mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/25 bg-primary/8 text-primary text-sm font-mono">
-              <span className="relative flex h-1.5 w-1.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
-                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-primary" />
-              </span>
-              Open to opportunities
+            <div className="hero-topline opacity-0 animate-slide-up mb-8">
+              {/* Status badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/25 bg-primary/8 text-primary text-sm font-mono">
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
+                  <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-primary" />
+                </span>
+                Open to opportunities
+              </div>
+
+              <div className="today-update-panel">
+                <div className="today-update-header">
+                  <span className="today-update-icon">
+                    <CalendarDays className="h-4 w-4" />
+                  </span>
+                  <span>May 26 Build Note</span>
+                  <span className="today-update-live">
+                    <WandSparkles className="h-3.5 w-3.5" />
+                    Live refresh
+                  </span>
+                </div>
+                <div className="today-update-items">
+                  {todayUpdates.map((item) => (
+                    <span key={item}>{item}</span>
+                  ))}
+                </div>
+              </div>
             </div>
 
             {/* Greeting */}
