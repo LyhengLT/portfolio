@@ -41,6 +41,25 @@ const popLetters = [
   { text: "01", left: "52%", top: "86%", delay: "-23s" },
 ]
 
+const signalNodes = [
+  { id: "frontend", label: "UI", left: "16%", top: "21%", delay: "-1s" },
+  { id: "api", label: "API", left: "34%", top: "34%", delay: "-5s" },
+  { id: "database", label: "DB", left: "58%", top: "25%", delay: "-9s" },
+  { id: "motion", label: "FX", left: "78%", top: "39%", delay: "-13s" },
+  { id: "deploy", label: "GO", left: "70%", top: "69%", delay: "-17s" },
+  { id: "learn", label: "01", left: "42%", top: "74%", delay: "-21s" },
+  { id: "ship", label: "UP", left: "21%", top: "62%", delay: "-25s" },
+]
+
+const signalLines = [
+  { left: "17%", top: "25%", width: "22vw", rotate: "24deg", delay: "-3s" },
+  { left: "35%", top: "31%", width: "25vw", rotate: "-14deg", delay: "-8s" },
+  { left: "58%", top: "29%", width: "23vw", rotate: "28deg", delay: "-12s" },
+  { left: "62%", top: "60%", width: "20vw", rotate: "-37deg", delay: "-16s" },
+  { left: "40%", top: "70%", width: "30vw", rotate: "-10deg", delay: "-20s" },
+  { left: "21%", top: "58%", width: "24vw", rotate: "31deg", delay: "-24s" },
+]
+
 export function AmbientEffects() {
   const [activeSection, setActiveSection] = useState("hero")
   const [scrollProgress, setScrollProgress] = useState(0)
@@ -182,6 +201,38 @@ export function AmbientEffects() {
               }
             >
               {letter.text}
+            </span>
+          ))}
+        </div>
+        <div className="ambient-signal-map">
+          {signalLines.map((line) => (
+            <span
+              key={`${line.left}-${line.top}`}
+              className="ambient-signal-line"
+              style={
+                {
+                  "--signal-left": line.left,
+                  "--signal-top": line.top,
+                  "--signal-width": line.width,
+                  "--signal-rotate": line.rotate,
+                  "--signal-delay": line.delay,
+                } as CSSProperties
+              }
+            />
+          ))}
+          {signalNodes.map((node) => (
+            <span
+              key={node.id}
+              className="ambient-signal-node"
+              style={
+                {
+                  "--signal-left": node.left,
+                  "--signal-top": node.top,
+                  "--signal-delay": node.delay,
+                } as CSSProperties
+              }
+            >
+              {node.label}
             </span>
           ))}
         </div>

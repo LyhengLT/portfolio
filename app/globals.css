@@ -428,6 +428,40 @@ main > footer {
   }
 }
 
+@keyframes signal-map-drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50%      { transform: translate3d(1.2vw, -1.6vh, 0) scale(1.02); }
+}
+
+@keyframes signal-node-pulse {
+  0%, 100% {
+    opacity: 0.34;
+    transform: translate3d(0, 0, 0) scale(0.92);
+    box-shadow: 0 0 0 0 rgba(151, 101, 56, 0.16);
+  }
+  45% {
+    opacity: 0.86;
+    transform: translate3d(0, -0.45rem, 0) scale(1);
+    box-shadow: 0 0 0 0.65rem rgba(151, 101, 56, 0);
+  }
+}
+
+@keyframes signal-line-flow {
+  0%, 100% {
+    opacity: 0.12;
+    transform: rotate(var(--signal-rotate)) scaleX(0.7);
+  }
+  50% {
+    opacity: 0.44;
+    transform: rotate(var(--signal-rotate)) scaleX(1);
+  }
+}
+
+@keyframes signal-line-spark {
+  from { transform: translateX(-20%); }
+  to   { transform: translateX(120%); }
+}
+
 @keyframes progress-fill {
   from { width: 0%; }
 }
@@ -892,6 +926,72 @@ main > footer {
   text-shadow: 0 16px 48px rgba(82, 52, 31, 0.08);
   animation: ambient-letter-pop 13s ease-in-out infinite;
   animation-delay: var(--letter-delay);
+}
+
+.ambient-signal-map {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0.92;
+  translate: calc(var(--mouse-pan-x, 0px) * 0.22) calc(var(--mouse-pan-y, 0px) * 0.22);
+  animation: signal-map-drift 21s ease-in-out infinite;
+  mask-image: linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
+}
+
+.ambient-signal-node {
+  position: absolute;
+  left: var(--signal-left);
+  top: var(--signal-top);
+  z-index: 2;
+  display: inline-grid;
+  width: clamp(2rem, 4vw, 3.4rem);
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid rgba(128, 86, 50, 0.19);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 35% 30%, rgba(255, 250, 235, 0.62), rgba(255, 250, 235, 0.08)),
+    rgba(165, 106, 63, 0.1);
+  color: rgba(88, 58, 36, 0.34);
+  font-family: var(--font-mono);
+  font-size: clamp(0.58rem, 1vw, 0.84rem);
+  font-weight: 950;
+  line-height: 1;
+  animation: signal-node-pulse 8.5s ease-in-out infinite;
+  animation-delay: var(--signal-delay);
+}
+
+.ambient-signal-node::after {
+  content: '';
+  position: absolute;
+  inset: -0.46rem;
+  border: 1px solid rgba(128, 86, 50, 0.08);
+  border-radius: inherit;
+}
+
+.ambient-signal-line {
+  position: absolute;
+  left: var(--signal-left);
+  top: var(--signal-top);
+  z-index: 1;
+  width: var(--signal-width);
+  height: 1px;
+  overflow: hidden;
+  background: linear-gradient(90deg, transparent, rgba(111, 72, 42, 0.3), transparent);
+  transform-origin: left center;
+  animation: signal-line-flow 8.5s ease-in-out infinite;
+  animation-delay: var(--signal-delay);
+}
+
+.ambient-signal-line::after {
+  content: '';
+  position: absolute;
+  inset-block: -1px;
+  left: 0;
+  width: 28%;
+  background: linear-gradient(90deg, transparent, rgba(255, 250, 235, 0.82), transparent);
+  animation: signal-line-spark 4.8s ease-in-out infinite;
+  animation-delay: var(--signal-delay);
 }
 
 .paper-grain span {
@@ -1569,6 +1669,7 @@ main > footer {
   .ambient-mega-word,
   .ambient-type-pop,
   .ambient-letter-pop,
+  .ambient-signal-map,
   .paper-grain span {
     display: none;
   }
