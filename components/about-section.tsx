@@ -142,12 +142,12 @@ export function AboutSection() {
               <span className="avatar-orbit-dot avatar-orbit-dot-a" aria-hidden="true" />
               <span className="avatar-orbit-dot avatar-orbit-dot-b" aria-hidden="true" />
               <span className="avatar-orbit-dot avatar-orbit-dot-c" aria-hidden="true" />
-              <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-primary via-[#caa26a] to-accent p-0.5 shadow-2xl shadow-primary/15">
-                <div className="w-full h-full rounded-full bg-card flex flex-col items-center justify-center gap-1">
-                  <span className="text-7xl md:text-8xl font-black bg-gradient-to-br from-primary to-accent bg-clip-text text-transparent">
+              <div className="avatar-shell w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-primary via-[#caa26a] to-accent p-0.5 shadow-2xl shadow-primary/15">
+                <div className="avatar-core-panel w-full h-full rounded-full flex flex-col items-center justify-center gap-1">
+                  <span className="avatar-core-initials text-7xl md:text-8xl font-black bg-gradient-to-br from-primary to-accent bg-clip-text text-transparent">
                     LH
                   </span>
-                  <span className="text-sm md:text-base text-muted-foreground font-mono">Developer</span>
+                  <span className="avatar-core-label text-sm md:text-base font-mono">Developer</span>
                 </div>
               </div>
               <div className="avatar-chip avatar-chip-a absolute top-6 -right-5 bg-card border border-border rounded-lg px-3.5 py-2 text-sm font-mono text-[#68795d] shadow-lg transition-transform duration-300 hover:-translate-y-1">
