@@ -8,6 +8,7 @@ const navLinks = [
   { label: "About", href: "#about" },
   { label: "Tech Stack", href: "#tech-stack" },
   { label: "Projects", href: "#projects" },
+  { label: "Build", href: "#build-log" },
   { label: "Learning", href: "#learning" },
   { label: "Contact", href: "#contact" },
 ]
@@ -138,7 +139,7 @@ export function Navigation() {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => scrollToSection(e, link.href)}
-                  className={`relative px-4 py-2 text-base font-semibold rounded-lg transition-all duration-300 ${
+                  className={`relative px-3 py-2 text-base font-semibold rounded-lg transition-all duration-300 ${
                     isActive
                       ? "text-primary bg-primary/10"
                       : "text-muted-foreground hover:text-foreground hover:bg-secondary/60"
