@@ -82,11 +82,11 @@ export function ContactSection() {
               href={c.href}
               target={c.href.startsWith("http") ? "_blank" : undefined}
               rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="reveal modern-card group bg-card border border-border rounded-xl p-7 hover:border-primary/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-black/20"
+              className="reveal contact-signal-card modern-card group bg-card border border-border rounded-xl p-7 hover:border-primary/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-black/20"
               style={{ "--reveal-delay": `${i * 80}ms` } as CSSProperties}
             >
               <div className="flex items-start justify-between mb-4">
-                <div className={`w-14 h-14 rounded-lg ${c.bg} flex items-center justify-center`}>
+                <div className={`contact-icon w-14 h-14 rounded-lg ${c.bg} flex items-center justify-center`}>
                   <c.icon className={`w-6 h-6 ${c.color}`} />
                 </div>
                 <ArrowUpRight className="w-5 h-5 text-muted-foreground/40 group-hover:text-muted-foreground transition-all group-hover:translate-x-1 group-hover:-translate-y-1 duration-300" />
@@ -102,7 +102,7 @@ export function ContactSection() {
         <div className="reveal text-center">
           <a
             href="mailto:laylyheng88@gmail.com"
-            className="inline-flex items-center gap-2.5 px-9 py-4 bg-primary text-primary-foreground rounded-xl text-lg font-bold transition-all duration-300 hover:opacity-90 hover:scale-[1.03] hover:shadow-xl hover:shadow-primary/20"
+            className="pulse-cta inline-flex items-center gap-2.5 px-9 py-4 bg-primary text-primary-foreground rounded-xl text-lg font-bold transition-all duration-300 hover:opacity-90 hover:scale-[1.03] hover:shadow-xl hover:shadow-primary/20"
           >
             <Send className="w-5 h-5" />
             Start a Conversation

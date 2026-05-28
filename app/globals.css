@@ -479,6 +479,49 @@ main > footer {
   100% { transform: translateX(220%) skewX(-16deg); opacity: 0; }
 }
 
+@keyframes section-sweep {
+  0%, 100% { transform: translate3d(-18vw, 0, 0) rotate(-10deg); opacity: 0; }
+  38%      { opacity: 0.28; }
+  72%      { transform: translate3d(78vw, -5vh, 0) rotate(8deg); opacity: 0; }
+}
+
+@keyframes icon-float-breathe {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50%      { transform: translate3d(0, -0.28rem, 0) scale(1.04); }
+}
+
+@keyframes stat-spark {
+  0%   { transform: translateX(-120%); opacity: 0; }
+  28%  { opacity: 0.72; }
+  100% { transform: translateX(180%); opacity: 0; }
+}
+
+@keyframes avatar-orbit-dot {
+  from { transform: rotate(0deg) translateX(11rem) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(11rem) rotate(-360deg); }
+}
+
+@keyframes avatar-chip-drift {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50%      { transform: translate3d(0, -0.45rem, 0); }
+}
+
+@keyframes progress-spark {
+  from { transform: translateX(-30%); }
+  to   { transform: translateX(130%); }
+}
+
+@keyframes contact-ring {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.86);
+  }
+  45% {
+    opacity: 0.38;
+    transform: scale(1.22);
+  }
+}
+
 @keyframes progress-fill {
   from { width: 0%; }
 }
@@ -629,6 +672,11 @@ main > footer {
   padding-block: clamp(6rem, 11vw, 10rem);
 }
 
+.section-shell > * {
+  position: relative;
+  z-index: 1;
+}
+
 .section-shell::before {
   content: '';
   position: absolute;
@@ -639,6 +687,28 @@ main > footer {
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 1s cubic-bezier(0.16,1,0.3,1);
+}
+
+.section-shell::after {
+  content: '';
+  position: absolute;
+  top: 18%;
+  left: -24vw;
+  z-index: 0;
+  width: min(70vw, 54rem);
+  height: 9rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(255, 250, 235, 0.38), rgba(178, 112, 62, 0.1), transparent);
+  filter: blur(18px);
+  pointer-events: none;
+  animation: section-sweep 13s ease-in-out infinite;
+  animation-delay: calc(var(--section-sweep-delay, 0) * -1s);
+}
+
+.section-shell:nth-of-type(2n)::after {
+  top: 58%;
+  animation-duration: 16s;
+  animation-delay: -6s;
 }
 
 .section-shell:has(.visible)::before {
@@ -690,6 +760,174 @@ main > footer {
 .modern-card:hover::after {
   opacity: 1;
   animation: card-sheen 0.85s ease;
+}
+
+.motion-card,
+.trait-motion-card,
+.stack-motion-card,
+.learning-motion-card,
+.contact-signal-card {
+  will-change: transform, box-shadow;
+}
+
+.motion-card::before,
+.trait-motion-card::before,
+.stack-motion-card::before,
+.learning-motion-card::before,
+.contact-signal-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255, 250, 235, 0.64), transparent 24%),
+    linear-gradient(135deg, rgba(165, 106, 63, 0.08), transparent 48%, rgba(104, 121, 93, 0.08));
+  transition: opacity 0.35s ease;
+}
+
+.motion-card:hover::before,
+.trait-motion-card:hover::before,
+.stack-motion-card:hover::before,
+.learning-motion-card:hover::before,
+.contact-signal-card:hover::before {
+  opacity: 1;
+}
+
+.stat-spark-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-spark-card::after {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  width: 38%;
+  background: linear-gradient(90deg, transparent, rgba(255, 250, 235, 0.68), transparent);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.stat-spark-card:hover::after {
+  animation: stat-spark 0.9s ease;
+}
+
+.avatar-orbit-stage {
+  isolation: isolate;
+}
+
+.avatar-orbit-dot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  width: 0.64rem;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  background: #d0ad72;
+  box-shadow: 0 0 0 0.35rem rgba(208, 173, 114, 0.12);
+  transform-origin: center;
+  animation: avatar-orbit-dot 12s linear infinite;
+}
+
+.avatar-orbit-dot-b {
+  width: 0.48rem;
+  background: #68795d;
+  animation-duration: 16s;
+  animation-delay: -5s;
+  animation-direction: reverse;
+}
+
+.avatar-orbit-dot-c {
+  width: 0.42rem;
+  background: #9b5f3d;
+  animation-duration: 20s;
+  animation-delay: -9s;
+}
+
+.avatar-chip {
+  animation: avatar-chip-drift 5.5s ease-in-out infinite;
+}
+
+.avatar-chip-b {
+  animation-delay: -2.5s;
+}
+
+.stack-icon,
+.learning-icon,
+.contact-icon {
+  position: relative;
+  overflow: hidden;
+  animation: icon-float-breathe 5.8s ease-in-out infinite;
+}
+
+.stack-icon::after,
+.learning-icon::after,
+.contact-icon::after {
+  content: '';
+  position: absolute;
+  inset: -30%;
+  background: conic-gradient(from 90deg, transparent, rgba(255, 250, 235, 0.58), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: orbit-dash 7s linear infinite;
+}
+
+.stack-motion-card:hover .stack-icon::after,
+.learning-motion-card:hover .learning-icon::after,
+.contact-signal-card:hover .contact-icon::after {
+  opacity: 1;
+}
+
+.skill-bar,
+.progress-bar,
+.build-log-meter-fill {
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-bar::after,
+.progress-bar::after,
+.build-log-meter-fill::after {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  width: 34%;
+  background: linear-gradient(90deg, transparent, rgba(255, 250, 235, 0.72), transparent);
+  animation: progress-spark 2.6s ease-in-out infinite;
+}
+
+.contact-signal-card::after {
+  opacity: 0;
+}
+
+.contact-icon::before {
+  content: '';
+  position: absolute;
+  inset: -0.35rem;
+  border: 1px solid rgba(128, 86, 50, 0.16);
+  border-radius: inherit;
+  animation: contact-ring 3.8s ease-in-out infinite;
+}
+
+.pulse-cta {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.pulse-cta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  box-shadow: 0 0 0 0 rgba(151, 101, 56, 0.28);
+  animation: live-breathe 2.7s ease-in-out infinite;
 }
 
 .build-log-grid {
@@ -1831,6 +2069,9 @@ main > footer {
   .ambient-type-pop,
   .ambient-letter-pop,
   .ambient-signal-map,
+  .section-shell::after,
+  .avatar-orbit-dot,
+  .stat-spark-card::after,
   .paper-grain span {
     display: none;
   }

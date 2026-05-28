@@ -114,12 +114,12 @@ export function LearningSection() {
           {learning.map((item, i) => (
             <div
               key={item.title}
-              className="reveal modern-card bg-card border border-border rounded-xl p-7 md:p-8 hover:border-primary/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-black/20"
+              className="reveal learning-motion-card modern-card bg-card border border-border rounded-xl p-7 md:p-8 hover:border-primary/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-black/20"
               style={{ "--reveal-delay": `${i * 80}ms` } as CSSProperties}
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-3">
-                  <div className={`w-14 h-14 rounded-lg ${item.bg} flex items-center justify-center`}>
+                  <div className={`learning-icon w-14 h-14 rounded-lg ${item.bg} flex items-center justify-center`}>
                     <item.icon className={`w-6 h-6 ${item.color}`} />
                   </div>
                   <h3 className="font-bold text-foreground text-2xl">{item.title}</h3>

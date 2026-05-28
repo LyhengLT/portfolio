@@ -149,12 +149,12 @@ export function TechStackSection() {
           {techStack.map((stack, i) => (
             <div
               key={stack.category}
-              className="reveal modern-card bg-card border border-border rounded-xl p-7 md:p-8 hover:border-primary/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-black/20"
+              className="reveal stack-motion-card modern-card bg-card border border-border rounded-xl p-7 md:p-8 hover:border-primary/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-black/20"
               style={{ "--reveal-delay": `${i * 80}ms` } as CSSProperties}
             >
               {/* Header */}
               <div className="flex items-center gap-4 mb-7">
-                <div className={`w-14 h-14 rounded-lg ${stack.bg} flex items-center justify-center`}>
+                <div className={`stack-icon w-14 h-14 rounded-lg ${stack.bg} flex items-center justify-center`}>
                   <stack.icon className={`w-6 h-6 ${stack.color}`} />
                 </div>
                 <div>

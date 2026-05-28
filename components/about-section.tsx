@@ -124,11 +124,11 @@ export function AboutSection() {
             </blockquote>
 
             <div className="grid grid-cols-2 gap-3 pt-2">
-              <div className="rounded-lg border border-border/60 bg-card/70 px-4 py-3">
+              <div className="stat-spark-card rounded-lg border border-border/60 bg-card/70 px-4 py-3">
                 <p className="text-3xl font-black text-primary">4</p>
                 <p className="text-sm font-bold text-muted-foreground">project clones</p>
               </div>
-              <div className="rounded-lg border border-border/60 bg-card/70 px-4 py-3">
+              <div className="stat-spark-card rounded-lg border border-border/60 bg-card/70 px-4 py-3">
                 <p className="text-3xl font-black text-[#68795d]">3</p>
                 <p className="text-sm font-bold text-muted-foreground">main stack layers</p>
               </div>
@@ -137,8 +137,11 @@ export function AboutSection() {
 
           {/* Avatar */}
           <div className="reveal-right flex justify-center lg:justify-end">
-            <div className="relative">
+            <div className="avatar-orbit-stage relative">
               <div className="absolute -inset-5 rounded-full border border-dashed border-primary/20 animate-spin-slow" />
+              <span className="avatar-orbit-dot avatar-orbit-dot-a" aria-hidden="true" />
+              <span className="avatar-orbit-dot avatar-orbit-dot-b" aria-hidden="true" />
+              <span className="avatar-orbit-dot avatar-orbit-dot-c" aria-hidden="true" />
               <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-primary via-[#caa26a] to-accent p-0.5 shadow-2xl shadow-primary/15">
                 <div className="w-full h-full rounded-full bg-card flex flex-col items-center justify-center gap-1">
                   <span className="text-7xl md:text-8xl font-black bg-gradient-to-br from-primary to-accent bg-clip-text text-transparent">
@@ -147,10 +150,10 @@ export function AboutSection() {
                   <span className="text-sm md:text-base text-muted-foreground font-mono">Developer</span>
                 </div>
               </div>
-              <div className="absolute top-6 -right-5 bg-card border border-border rounded-lg px-3.5 py-2 text-sm font-mono text-[#68795d] shadow-lg transition-transform duration-300 hover:-translate-y-1">
+              <div className="avatar-chip avatar-chip-a absolute top-6 -right-5 bg-card border border-border rounded-lg px-3.5 py-2 text-sm font-mono text-[#68795d] shadow-lg transition-transform duration-300 hover:-translate-y-1">
                 Vue.js
               </div>
-              <div className="absolute bottom-8 -left-5 bg-card border border-border rounded-lg px-3.5 py-2 text-sm font-mono text-[#9b5f3d] shadow-lg transition-transform duration-300 hover:-translate-y-1">
+              <div className="avatar-chip avatar-chip-b absolute bottom-8 -left-5 bg-card border border-border rounded-lg px-3.5 py-2 text-sm font-mono text-[#9b5f3d] shadow-lg transition-transform duration-300 hover:-translate-y-1">
                 Go Fiber
               </div>
             </div>
@@ -170,7 +173,7 @@ export function AboutSection() {
             {buildApproach.map((item, i) => (
               <div
                 key={item.title}
-                className="reveal modern-card border border-border rounded-xl bg-card p-6 transition-all duration-300 hover:-translate-y-2 hover:border-primary/40 hover:shadow-xl hover:shadow-black/15"
+                className="reveal motion-card modern-card border border-border rounded-xl bg-card p-6 transition-all duration-300 hover:-translate-y-2 hover:border-primary/40 hover:shadow-xl hover:shadow-black/15"
                 style={{ "--reveal-delay": `${i * 70}ms` } as CSSProperties}
               >
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
@@ -190,7 +193,7 @@ export function AboutSection() {
           {traits.map((trait, i) => (
             <div
               key={trait.title}
-              className="reveal modern-card bg-card border border-border rounded-xl p-6 md:p-7 hover:border-primary/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-black/20"
+              className="reveal trait-motion-card modern-card bg-card border border-border rounded-xl p-6 md:p-7 hover:border-primary/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-black/20"
               style={{ "--reveal-delay": `${i * 70}ms` } as CSSProperties}
             >
               <div className={`w-12 h-12 rounded-lg ${trait.bg} flex items-center justify-center mb-4`}>
