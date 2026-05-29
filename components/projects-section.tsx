@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import type { CSSProperties, MouseEvent } from "react"
-import { ExternalLink, Github, Star, Lock, CheckCircle2, Layers3 } from "lucide-react"
+import { Activity, ExternalLink, Github, Star, Lock, CheckCircle2, Layers3, Sparkles } from "lucide-react"
 
 const projects = [
   {
@@ -14,6 +14,11 @@ const projects = [
     role: "Full-stack build",
     timeline: "Core clone + polish",
     highlights: ["Auth flow", "Search and filtering", "Listing dashboard"],
+    metrics: [
+      { label: "Flow", value: "Auth" },
+      { label: "Data", value: "Oracle" },
+      { label: "UI", value: "Responsive" },
+    ],
     result: "A full product-style clone with frontend, backend, and database pieces working together.",
     gradient: "from-[#9b5f3d] to-[#caa26a]",
     previewColor: "#9b5f3d",
@@ -32,6 +37,11 @@ const projects = [
     role: "Frontend recreation",
     timeline: "UI precision sprint",
     highlights: ["Responsive layout", "Interactive states", "Clean vanilla structure"],
+    metrics: [
+      { label: "Layout", value: "Pixel" },
+      { label: "Motion", value: "Native" },
+      { label: "Stack", value: "Vanilla" },
+    ],
     result: "A focused exercise in spacing, typography, and browser-native JavaScript without framework help.",
     gradient: "from-[#a65f4a] to-[#d6a071]",
     previewColor: "#a65f4a",
@@ -50,6 +60,11 @@ const projects = [
     role: "Full-stack architecture",
     timeline: "API-first build",
     highlights: ["Job-style data models", "REST endpoints", "Vue component views"],
+    metrics: [
+      { label: "API", value: "REST" },
+      { label: "Model", value: "Jobs" },
+      { label: "View", value: "Vue" },
+    ],
     result: "A Cambodia-focused product clone shaped around practical listing and browsing flows.",
     gradient: "from-[#68795d] to-[#a4a86f]",
     previewColor: "#68795d",
@@ -68,6 +83,11 @@ const projects = [
     role: "Frontend systems",
     timeline: "Modular JS build",
     highlights: ["Reusable modules", "API rendering", "Job board filtering"],
+    metrics: [
+      { label: "Logic", value: "Modules" },
+      { label: "Render", value: "API" },
+      { label: "Browse", value: "Filters" },
+    ],
     result: "A clean vanilla app that keeps logic, state, and UI behavior separated.",
     gradient: "from-[#374151] to-[#8f6b45]",
     previewColor: "#374151",
@@ -170,6 +190,12 @@ export function ProjectsSection() {
                     loading="lazy"
                   />
                   <span className="project-preview-label">{project.tagline}</span>
+                  <span className="project-preview-status">
+                    <Activity className="h-3.5 w-3.5" />
+                    Build signal
+                  </span>
+                  <span className="project-preview-wire project-preview-wire-a" />
+                  <span className="project-preview-wire project-preview-wire-b" />
                   <span className="project-preview-orbit project-preview-orbit-a" />
                   <span className="project-preview-orbit project-preview-orbit-b" />
                   <span className="project-preview-shape" />
@@ -237,6 +263,23 @@ export function ProjectsSection() {
                 <p className="mb-6 rounded-lg border border-primary/15 bg-primary/8 px-4 py-3 text-base font-semibold leading-relaxed text-foreground/75">
                   {project.result}
                 </p>
+
+                <div className="project-metric-grid mb-6">
+                  {project.metrics.map((metric, metricIndex) => (
+                    <div
+                      key={`${project.title}-${metric.label}`}
+                      className="project-metric-card"
+                      style={{ "--metric-delay": `${metricIndex * 0.22}s` } as CSSProperties}
+                    >
+                      <span className="project-metric-line" />
+                      <span className="project-metric-label">
+                        <Sparkles className="h-3.5 w-3.5" />
+                        {metric.label}
+                      </span>
+                      <span className="project-metric-value">{metric.value}</span>
+                    </div>
+                  ))}
+                </div>
 
                 {/* Tech tags */}
                 <div className="flex flex-wrap gap-2 mb-6">
