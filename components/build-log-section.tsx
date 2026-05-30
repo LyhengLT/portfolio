@@ -95,7 +95,7 @@ export function BuildLogSection() {
       <div className="max-w-6xl mx-auto">
         <div className="mb-16 md:mb-20">
           <p className="reveal section-kicker text-primary font-mono uppercase mb-4">
-            04. Build Log
+            05. Build Log
           </p>
           <h2 className="reveal section-title font-black mb-6 text-foreground">
             How I Turn Ideas Into Working Apps

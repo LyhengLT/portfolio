@@ -100,7 +100,7 @@ export function LearningSection() {
       <div className="max-w-6xl mx-auto">
         <div className="mb-16 md:mb-20">
           <p className="reveal section-kicker text-primary font-mono uppercase mb-4">
-            05. Growth
+            06. Growth
           </p>
           <h2 className="reveal section-title font-black mb-6 text-foreground">
             Currently Learning

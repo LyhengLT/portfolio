@@ -64,7 +64,7 @@ export function ContactSection() {
         {/* Header */}
         <div className="text-center mb-16 md:mb-20">
           <p className="reveal section-kicker text-primary font-mono uppercase mb-4">
-            06. Contact
+            07. Contact
           </p>
           <h2 className="reveal section-title font-black mb-6 text-foreground">
             Let&apos;s Connect

@@ -8,6 +8,7 @@ const sections = [
   { id: "about", label: "About" },
   { id: "tech-stack", label: "Stack" },
   { id: "projects", label: "Work" },
+  { id: "now", label: "Now" },
   { id: "build-log", label: "Build" },
   { id: "learning", label: "Growth" },
   { id: "contact", label: "Contact" },
@@ -23,7 +24,7 @@ const floatingWords = [
 
 const runningRows = [
   "VUE GO FIBER ORACLE REST UI BUILD SHIP LEARN",
-  "PORTFOLIO DEVELOPER FULL STACK CAMBODIA CLEAN CODE",
+  "PORTFOLIO DEVELOPER FULL STACK CAMBODIA CLEAN CODE NOW",
 ]
 
 const typedPopWords = [

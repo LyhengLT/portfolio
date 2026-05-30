@@ -479,6 +479,44 @@ main > footer {
   100% { transform: translateX(220%) skewX(-16deg); opacity: 0; }
 }
 
+@keyframes now-orbit {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes now-label-float {
+  0%, 100% {
+    transform: rotate(var(--label-rotate)) translateX(9.5rem) rotate(var(--label-rotate-inverse));
+  }
+  50% {
+    transform: rotate(var(--label-rotate-float)) translateX(10.6rem) rotate(var(--label-rotate-float-inverse)) translateY(-0.35rem);
+  }
+}
+
+@keyframes now-core-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(151, 101, 56, 0.18), 0 28px 80px rgba(72, 49, 31, 0.16);
+  }
+  50% {
+    box-shadow: 0 0 0 0.75rem rgba(151, 101, 56, 0), 0 34px 90px rgba(104, 121, 93, 0.18);
+  }
+}
+
+@keyframes now-roadmap-rise {
+  0% {
+    opacity: 0.48;
+    transform: translateY(0.4rem);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-0.3rem);
+  }
+  100% {
+    opacity: 0.7;
+    transform: translateY(0);
+  }
+}
+
 @keyframes section-sweep {
   0%, 100% { transform: translate3d(-18vw, 0, 0) rotate(-10deg); opacity: 0; }
   38%      { opacity: 0.28; }
@@ -1161,6 +1199,307 @@ main > footer {
   border-radius: inherit;
   background: linear-gradient(90deg, var(--step-color), #d0ad72);
   transition: width 1.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.now-section {
+  --section-sweep-delay: 4;
+}
+
+.now-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+.now-orbit-card {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.4rem);
+  min-height: 100%;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: clamp(1.35rem, 3vw, 2rem);
+}
+
+.now-orbit-card::before,
+.now-focus-card::before,
+.now-roadmap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255, 250, 235, 0.7), transparent 26%),
+    linear-gradient(135deg, rgba(151, 101, 56, 0.08), transparent 44%, rgba(104, 121, 93, 0.1));
+}
+
+.now-orbit-card > *,
+.now-focus-card > *,
+.now-roadmap > * {
+  position: relative;
+  z-index: 1;
+}
+
+.now-orbit-stage {
+  position: relative;
+  display: grid;
+  min-height: 20rem;
+  place-items: center;
+  border: 1px solid rgba(128, 86, 50, 0.13);
+  border-radius: 1rem;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 250, 235, 0.7), transparent 42%),
+    linear-gradient(135deg, rgba(232, 211, 181, 0.36), rgba(255, 250, 235, 0.22));
+  overflow: hidden;
+}
+
+.now-orbit-stage::before {
+  content: '';
+  position: absolute;
+  inset: 14%;
+  border: 1px dashed rgba(151, 101, 56, 0.22);
+  border-radius: 999px;
+  animation: now-orbit 18s linear infinite;
+}
+
+.now-orbit-ring {
+  position: absolute;
+  border: 1px solid rgba(104, 121, 93, 0.16);
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.now-orbit-ring-a {
+  width: 72%;
+  aspect-ratio: 1;
+  animation: now-orbit 22s linear infinite reverse;
+}
+
+.now-orbit-ring-b {
+  width: 48%;
+  aspect-ratio: 1;
+  border-style: dashed;
+  animation: now-orbit 15s linear infinite;
+}
+
+.now-floating-label {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(128, 86, 50, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 250, 235, 0.72);
+  padding: 0.46rem 0.68rem;
+  color: rgba(75, 50, 32, 0.74);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 900;
+  line-height: 1;
+  box-shadow: 0 12px 28px rgba(72, 49, 31, 0.08);
+  transform-origin: 0 0;
+  animation: now-label-float 7.5s ease-in-out infinite;
+  animation-delay: var(--label-delay);
+}
+
+.now-core {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  width: min(12rem, 55vw);
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid rgba(151, 101, 56, 0.2);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 32% 24%, rgba(255, 250, 235, 0.96), transparent 30%),
+    linear-gradient(135deg, rgba(245, 217, 179, 0.95), rgba(185, 121, 88, 0.26), rgba(104, 121, 93, 0.2));
+  color: #6f4029;
+  text-align: center;
+  animation: now-core-pulse 4.8s ease-in-out infinite;
+}
+
+.now-core span {
+  margin-top: -2.1rem;
+  color: rgba(75, 50, 32, 0.7);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.now-live-pill,
+.now-focus-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border: 1px solid rgba(104, 121, 93, 0.18);
+  border-radius: 999px;
+  background: rgba(104, 121, 93, 0.1);
+  color: #5f6f56;
+  font-size: 0.78rem;
+  font-weight: 950;
+  line-height: 1;
+}
+
+.now-live-pill {
+  padding: 0.56rem 0.78rem;
+}
+
+.now-live-pill span {
+  width: 0.5rem;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  background: #9cad7a;
+  box-shadow: 0 0 0 0.3rem rgba(156, 173, 122, 0.14);
+  animation: dock-pulse 2.4s ease-in-out infinite;
+}
+
+.now-focus-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.now-focus-card {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: clamp(1.2rem, 2.5vw, 1.55rem);
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.now-focus-card:hover {
+  border-color: color-mix(in oklab, var(--focus-color) 35%, transparent);
+  box-shadow: 0 22px 60px rgba(72, 49, 31, 0.11);
+  transform: translateY(-0.35rem);
+}
+
+.now-focus-icon {
+  display: grid;
+  flex: 0 0 auto;
+  width: 3rem;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid color-mix(in oklab, var(--focus-color) 24%, transparent);
+  border-radius: 0.9rem;
+  background: color-mix(in oklab, var(--focus-color) 11%, transparent);
+  color: var(--focus-color);
+  animation: icon-float-breathe 5.4s ease-in-out infinite;
+}
+
+.now-focus-note {
+  padding: 0.5rem 0.64rem;
+}
+
+.now-meter {
+  height: 0.5rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(78, 54, 35, 0.1);
+}
+
+.now-meter-fill {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--focus-color), #d0ad72);
+  transition: width 1.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.now-meter-fill::after {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  width: 32%;
+  background: linear-gradient(90deg, transparent, rgba(255, 250, 235, 0.72), transparent);
+  animation: progress-spark 2.5s ease-in-out infinite;
+}
+
+.now-roadmap {
+  position: relative;
+  margin-top: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: clamp(1.2rem, 2.7vw, 1.75rem);
+}
+
+.now-roadmap-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.now-roadmap-track {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.now-roadmap-step {
+  position: relative;
+  min-height: 7rem;
+  overflow: hidden;
+  border: 1px solid rgba(128, 86, 50, 0.14);
+  border-radius: 0.85rem;
+  background:
+    linear-gradient(145deg, rgba(255, 250, 235, 0.62), rgba(232, 211, 181, 0.36));
+  padding: 0.95rem;
+  animation: now-roadmap-rise 4.8s ease-in-out infinite;
+  animation-delay: var(--roadmap-delay);
+}
+
+.now-roadmap-step::after {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  width: 36%;
+  background: linear-gradient(90deg, transparent, rgba(255, 250, 235, 0.64), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.now-roadmap:hover .now-roadmap-step::after {
+  opacity: 1;
+  animation: stat-spark 0.9s ease;
+}
+
+.now-roadmap-step span {
+  display: block;
+  color: rgba(151, 101, 56, 0.58);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 950;
+  letter-spacing: 0.14em;
+}
+
+.now-roadmap-step p {
+  margin-top: 1.2rem;
+  color: rgba(45, 31, 21, 0.82);
+  font-size: clamp(0.98rem, 1.4vw, 1.1rem);
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+@media (max-width: 900px) {
+  .now-grid,
+  .now-roadmap-track {
+    grid-template-columns: 1fr;
+  }
+
+  .now-orbit-stage {
+    min-height: 17rem;
+  }
 }
 
 .scroll-progress {
