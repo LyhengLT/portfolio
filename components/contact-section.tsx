@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import type { CSSProperties } from "react"
-import { Mail, Instagram, Github, ArrowUpRight, Send } from "lucide-react"
+import { Mail, Instagram, Github, ArrowUpRight, Send, BriefcaseBusiness, Clock3, MapPin } from "lucide-react"
 
 const contacts = [
   {
@@ -31,6 +31,24 @@ const contacts = [
     color: "text-[#374151]",
     bg: "bg-[#374151]/10",
     description: "See my code & projects",
+  },
+]
+
+const availability = [
+  {
+    icon: BriefcaseBusiness,
+    label: "Open for",
+    value: "Internship and junior developer opportunities",
+  },
+  {
+    icon: Clock3,
+    label: "Best fit",
+    value: "Frontend, full-stack practice, and product clone work",
+  },
+  {
+    icon: MapPin,
+    label: "Based in",
+    value: "Phnom Penh, Cambodia",
   },
 ]
 
@@ -95,6 +113,28 @@ export function ContactSection() {
               <p className="text-muted-foreground text-base mb-4">{c.description}</p>
               <p className={`font-mono text-sm font-bold break-words ${c.color}`}>{c.value}</p>
             </a>
+          ))}
+        </div>
+
+        <div className="reveal mb-12 grid grid-cols-1 gap-3 rounded-2xl border border-border bg-card/55 p-4 shadow-xl shadow-primary/5 md:grid-cols-3 md:p-5">
+          {availability.map((item, index) => (
+            <div
+              key={item.label}
+              className="group rounded-xl border border-border/70 bg-background/45 p-4 transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 hover:bg-background/70"
+              style={{ "--reveal-delay": `${(index + contacts.length) * 70}ms` } as CSSProperties}
+            >
+              <div className="mb-3 flex items-center gap-3">
+                <span className="contact-icon flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <item.icon className="h-5 w-5" />
+                </span>
+                <span className="font-mono text-xs font-black uppercase tracking-[0.16em] text-primary">
+                  {item.label}
+                </span>
+              </div>
+              <p className="text-base font-black leading-snug text-foreground/85">
+                {item.value}
+              </p>
+            </div>
           ))}
         </div>
 

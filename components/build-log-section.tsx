@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import type { CSSProperties } from "react"
-import { CheckCircle2, Database, LayoutDashboard, Server, Sparkles } from "lucide-react"
+import { CheckCircle2, Database, LayoutDashboard, Server, Sparkles, Workflow } from "lucide-react"
 
 const buildSteps = [
   {
@@ -91,18 +91,43 @@ export function BuildLogSection() {
   }, [])
 
   return (
-    <section id="build-log" ref={sectionRef} className="section-shell px-6 lg:px-12">
+    <section id="build-log" ref={sectionRef} className="section-shell build-log-section px-6 lg:px-12">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-16 md:mb-20">
-          <p className="reveal section-kicker text-primary font-mono uppercase mb-4">
-            05. Build Log
-          </p>
-          <h2 className="reveal section-title font-black mb-6 text-foreground">
-            How I Turn Ideas Into Working Apps
-          </h2>
-          <p className="reveal section-subtitle text-muted-foreground">
-            A practical build rhythm: design the flow, connect the system, test the details, and ship.
-          </p>
+        <div className="build-log-header">
+          <div>
+            <p className="reveal section-kicker text-primary font-mono uppercase mb-4">
+              05. Build Log
+            </p>
+            <h2 className="reveal section-title font-black mb-6 text-foreground">
+              How I Turn Ideas Into Working Apps
+            </h2>
+            <p className="reveal section-subtitle text-muted-foreground">
+              A practical build rhythm: design the flow, connect the system, test the details, and ship.
+            </p>
+          </div>
+
+          <aside className="reveal build-log-summary modern-card" style={{ "--reveal-delay": "120ms" } as CSSProperties}>
+            <div className="build-log-summary-icon">
+              <Workflow className="h-6 w-6" />
+            </div>
+            <div>
+              <span className="build-log-badge">4 stage system</span>
+              <h3 className="mt-4 text-2xl font-black leading-tight text-foreground">
+                From screen idea to deployed version.
+              </h3>
+              <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+                Each step has a clear output, so the work never stays as only an idea.
+              </p>
+            </div>
+            <div className="build-log-summary-list">
+              {["Design flow", "Connect data", "Test details", "Ship update"].map((item) => (
+                <span key={item}>
+                  <CheckCircle2 className="h-4 w-4" />
+                  {item}
+                </span>
+              ))}
+            </div>
+          </aside>
         </div>
 
         <div className="build-log-grid">

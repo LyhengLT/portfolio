@@ -1080,6 +1080,90 @@ main > footer {
   gap: 1rem;
 }
 
+.build-log-section {
+  padding-block: clamp(3.5rem, 6vw, 5rem);
+}
+
+.build-log-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(18rem, 0.82fr);
+  gap: clamp(1.25rem, 4vw, 2rem);
+  align-items: start;
+  margin-bottom: clamp(1.5rem, 4vw, 2.4rem);
+}
+
+.build-log-section .section-title {
+  max-width: 18ch;
+  font-size: clamp(2.8rem, 5.4vw, 4.8rem);
+}
+
+.build-log-section .section-subtitle {
+  max-width: 40rem;
+}
+
+.build-log-summary {
+  position: relative;
+  display: grid;
+  gap: 1.15rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: clamp(1.2rem, 2.8vw, 1.65rem);
+}
+
+.build-log-summary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255, 250, 235, 0.72), transparent 28%),
+    linear-gradient(135deg, rgba(151, 101, 56, 0.09), transparent 48%, rgba(104, 121, 93, 0.11));
+}
+
+.build-log-summary > * {
+  position: relative;
+  z-index: 1;
+}
+
+.build-log-summary-icon {
+  display: grid;
+  width: 3.6rem;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid rgba(151, 101, 56, 0.2);
+  border-radius: 1rem;
+  background:
+    radial-gradient(circle at 35% 30%, rgba(255, 250, 235, 0.86), rgba(255, 250, 235, 0.3)),
+    rgba(151, 101, 56, 0.1);
+  color: #9b5f3d;
+  animation: icon-float-breathe 5.6s ease-in-out infinite;
+}
+
+.build-log-summary-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+.build-log-summary-list span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  min-height: 2.55rem;
+  border: 1px solid rgba(128, 86, 50, 0.14);
+  border-radius: 0.72rem;
+  background: rgba(255, 250, 235, 0.5);
+  padding: 0.62rem 0.72rem;
+  color: rgba(45, 31, 21, 0.78);
+  font-size: 0.86rem;
+  font-weight: 900;
+}
+
+.build-log-summary-list svg {
+  flex: 0 0 auto;
+  color: #68795d;
+}
+
 .build-log-rail {
   position: absolute;
   left: 1.45rem;
@@ -1492,6 +1576,15 @@ main > footer {
 }
 
 @media (max-width: 900px) {
+  .build-log-header {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .build-log-section .section-title {
+    font-size: clamp(2.8rem, 13vw, 4.8rem);
+  }
+
   .now-grid,
   .now-roadmap-track {
     grid-template-columns: 1fr;
