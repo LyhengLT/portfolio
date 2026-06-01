@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import type { CSSProperties } from "react"
-import { Mail, Github, ChevronDown, MapPin, GraduationCap, Sparkles, ArrowUpRight, Activity, CalendarDays, WandSparkles } from "lucide-react"
+import { Mail, Github, ChevronDown, MapPin, GraduationCap, Sparkles, ArrowUpRight, Activity, CalendarDays, WandSparkles, CheckCircle2 } from "lucide-react"
 
 const roles = [
   "Full-Stack Developer",
@@ -34,9 +34,15 @@ const liveActions = [
 ]
 
 const todayUpdates = [
-  "Sharper project visuals",
-  "More readable motion",
-  "Fresh warm studio polish",
+  "Build section reads faster",
+  "Contact availability added",
+  "Daily update card active",
+]
+
+const latestUpdateItems = [
+  "Tightened the Build section so details show sooner while scrolling.",
+  "Added availability context for internships, junior roles, and project work.",
+  "Keeping the portfolio updated like a living product, not a static page.",
 ]
 
 function useTypewriter(words: string[], speed = 80, pause = 2200) {
@@ -254,6 +260,24 @@ export function HeroSection() {
                   <span className="terminal-accent">{line.result}</span>
                 </div>
               ))}
+            </div>
+
+            <div className="latest-update-card mb-5">
+              <div className="latest-update-topline">
+                <span>
+                  <CalendarDays className="h-4 w-4" />
+                  {buildNoteDate} Update
+                </span>
+                <span className="latest-update-status">Fresh</span>
+              </div>
+              <div className="latest-update-list">
+                {latestUpdateItems.map((item) => (
+                  <div key={item} className="latest-update-row">
+                    <CheckCircle2 className="h-4 w-4" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <a
