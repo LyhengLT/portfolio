@@ -7,7 +7,7 @@ I'm a programming student at **BELTEI** and a self-driven developer who loves bu
 ## 🛠️ What I Work With
 
 **Frontend**
-- Vue.js · JavaScript (ES Modules) · HTML & CSS
+- Vue.js · JavaScript (ES Modules) · HTML & CSS n More
 
 **Backend**
 - Go · Fiber v3 · REST APIs
