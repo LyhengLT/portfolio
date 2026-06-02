@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import type { CSSProperties } from "react"
-import { Code2, Database, Server, Wrench } from "lucide-react"
+import { ArrowRight, Code2, Database, Server, Sparkles, Wrench } from "lucide-react"
 
 const techStack = [
   {
@@ -63,6 +63,37 @@ const marqueeItems = [
   "Responsive UI",
   "Git",
   "Clean Architecture",
+]
+
+const stackWorkflow = [
+  {
+    title: "Interface",
+    detail: "Vue, HTML, CSS, and JavaScript shape the screens people actually use.",
+    signal: "UI first",
+    icon: Code2,
+    color: "#68795d",
+  },
+  {
+    title: "API",
+    detail: "Go Fiber routes turn actions like auth, filters, and updates into real backend behavior.",
+    signal: "REST flow",
+    icon: Server,
+    color: "#9b5f3d",
+  },
+  {
+    title: "Persistence",
+    detail: "Oracle and SQL keep project data structured so the app can grow cleanly.",
+    signal: "Data layer",
+    icon: Database,
+    color: "#8f6b45",
+  },
+  {
+    title: "Ship",
+    detail: "Git, terminal, and deployment checks turn finished work into a version people can open.",
+    signal: "Deploy ready",
+    icon: Sparkles,
+    color: "#a65f4a",
+  },
 ]
 
 export function TechStackSection() {
@@ -142,6 +173,39 @@ export function TechStackSection() {
                 </span>
               ))}
             </div>
+          </div>
+        </div>
+
+        <div className="stack-workflow reveal mb-12">
+          <div className="stack-workflow-header">
+            <span className="section-kicker text-primary font-mono uppercase">How the stack connects</span>
+            <span className="stack-workflow-status">June 2 focus</span>
+          </div>
+          <div className="stack-workflow-grid">
+            {stackWorkflow.map((step, index) => (
+              <article
+                key={step.title}
+                className="stack-workflow-card"
+                style={
+                  {
+                    "--workflow-color": step.color,
+                    "--workflow-delay": `${index * 0.18}s`,
+                  } as CSSProperties
+                }
+              >
+                <div className="stack-workflow-icon">
+                  <step.icon className="h-5 w-5" />
+                </div>
+                <div>
+                  <span>{step.signal}</span>
+                  <h3>{step.title}</h3>
+                  <p>{step.detail}</p>
+                </div>
+                {index < stackWorkflow.length - 1 && (
+                  <ArrowRight className="stack-workflow-arrow h-5 w-5" aria-hidden="true" />
+                )}
+              </article>
+            ))}
           </div>
         </div>
 
