@@ -34,15 +34,15 @@ const liveActions = [
 ]
 
 const todayUpdates = [
-  "Stack workflow added",
-  "Skills explain the build path",
-  "June 2 focus polished",
+  "Project signal board added",
+  "Work section reads faster",
+  "June 3 polish shipped",
 ]
 
 const latestUpdateItems = [
-  "Added a stack workflow map that connects interface, API, data, and shipping steps.",
-  "Made the Skills section explain how each tool supports real project builds.",
-  "Kept the daily hero update synced with today's portfolio improvement.",
+  "Added a new Projects signal board so visitors can understand the work before opening each card.",
+  "Made project strengths easier to scan across full-stack flow, UI polish, clone practice, and deployment.",
+  "Kept the daily update streak moving with a real June 3 design improvement.",
 ]
 
 function useTypewriter(words: string[], speed = 80, pause = 2200) {

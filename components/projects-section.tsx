@@ -2,7 +2,18 @@
 
 import { useEffect, useRef } from "react"
 import type { CSSProperties, MouseEvent } from "react"
-import { Activity, ExternalLink, Github, Star, Lock, CheckCircle2, Layers3, Sparkles } from "lucide-react"
+import {
+  Activity,
+  BarChart3,
+  CheckCircle2,
+  ExternalLink,
+  Github,
+  Layers3,
+  Lock,
+  Rocket,
+  Sparkles,
+  Star,
+} from "lucide-react"
 
 const projects = [
   {
@@ -99,6 +110,30 @@ const projects = [
   },
 ]
 
+const projectSignals = [
+  {
+    label: "Full-stack flow",
+    value: "2 builds",
+    detail: "Vue screens connected to Go Fiber APIs and database-backed project logic.",
+    icon: Layers3,
+    color: "#68795d",
+  },
+  {
+    label: "UI precision",
+    value: "4 clones",
+    detail: "Real product layouts recreated with responsive spacing, states, and motion.",
+    icon: BarChart3,
+    color: "#9b5f3d",
+  },
+  {
+    label: "Launch habit",
+    value: "Daily push",
+    detail: "Small visible upgrades keep the portfolio feeling active instead of frozen.",
+    icon: Rocket,
+    color: "#a65f4a",
+  },
+]
+
 export function ProjectsSection() {
   const sectionRef = useRef<HTMLElement>(null)
 
@@ -159,6 +194,40 @@ export function ProjectsSection() {
           <p className="reveal section-subtitle text-muted-foreground">
             Real-world clones built from scratch — no tutorials, just code
           </p>
+        </div>
+
+        <div className="project-signal-board reveal mb-10 md:mb-12">
+          <div className="project-signal-copy">
+            <span className="section-kicker text-primary font-mono uppercase">June 3 project pulse</span>
+            <h3>Proof that the builds connect.</h3>
+            <p>
+              A quick scan of what the project section shows: product thinking, frontend polish,
+              backend structure, and the habit of shipping visible improvements.
+            </p>
+          </div>
+          <div className="project-signal-list">
+            {projectSignals.map((signal, index) => (
+              <article
+                key={signal.label}
+                className="project-signal-item"
+                style={
+                  {
+                    "--signal-color": signal.color,
+                    "--signal-delay": `${index * 0.18}s`,
+                  } as CSSProperties
+                }
+              >
+                <div className="project-signal-icon">
+                  <signal.icon className="h-5 w-5" />
+                </div>
+                <div>
+                  <span>{signal.label}</span>
+                  <strong>{signal.value}</strong>
+                  <p>{signal.detail}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
