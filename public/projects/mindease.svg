@@ -1,0 +1,57 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="720" rx="42" fill="#d6e8f5"/>
+  <rect x="70" y="78" width="1060" height="564" rx="34" fill="#eaf4fc"/>
+
+  <!-- Top bar -->
+  <rect x="70" y="78" width="1060" height="88" rx="34" fill="#5b7fa6"/>
+  <circle cx="120" cy="122" r="12" fill="#a8c8e8"/>
+  <circle cx="156" cy="122" r="12" fill="#7eb8c9"/>
+  <circle cx="192" cy="122" r="12" fill="#3a5f82"/>
+
+  <!-- Left panel: mood card -->
+  <rect x="102" y="210" width="430" height="200" rx="24" fill="#5b7fa6" opacity="0.15"/>
+  <rect x="102" y="210" width="430" height="200" rx="24" fill="none" stroke="#5b7fa6" stroke-width="2"/>
+  <!-- Heart icon shape -->
+  <path d="M290 268 C290 258 280 248 270 248 C260 248 250 258 250 268 C250 258 240 248 230 248 C220 248 210 258 210 268 C210 288 250 308 250 318 C250 308 290 288 290 268Z" fill="#a65f4a" opacity="0.7"/>
+  <!-- Mood label -->
+  <rect x="122" y="338" width="110" height="28" rx="14" fill="#5b7fa6" opacity="0.3"/>
+  <rect x="248" y="338" width="110" height="28" rx="14" fill="#7eb8c9" opacity="0.5"/>
+  <rect x="374" y="338" width="110" height="28" rx="14" fill="#5b7fa6" opacity="0.2"/>
+
+  <!-- Left panel: journal entry card -->
+  <rect x="102" y="432" width="430" height="140" rx="24" fill="#fff" opacity="0.6"/>
+  <rect x="130" y="456" width="280" height="14" rx="7" fill="#5b7fa6" opacity="0.4"/>
+  <rect x="130" y="482" width="360" height="12" rx="6" fill="#7eb8c9" opacity="0.3"/>
+  <rect x="130" y="504" width="320" height="12" rx="6" fill="#7eb8c9" opacity="0.3"/>
+  <rect x="130" y="526" width="200" height="12" rx="6" fill="#7eb8c9" opacity="0.2"/>
+
+  <!-- Right panel: AI insight card -->
+  <rect x="580" y="210" width="460" height="250" rx="24" fill="#fff" opacity="0.7"/>
+  <!-- AI sparkle icon -->
+  <circle cx="622" cy="254" r="22" fill="#5b7fa6" opacity="0.2"/>
+  <path d="M614 254 L622 238 L630 254 L622 270 Z" fill="#5b7fa6" opacity="0.7"/>
+  <path d="M606 246 L622 254 L638 246 L622 262 Z" fill="#7eb8c9" opacity="0.7"/>
+  <rect x="656" y="238" width="200" height="16" rx="8" fill="#3a5f82" opacity="0.5"/>
+  <rect x="656" y="262" width="340" height="12" rx="6" fill="#7eb8c9" opacity="0.3"/>
+  <rect x="600" y="298" width="420" height="12" rx="6" fill="#5b7fa6" opacity="0.2"/>
+  <rect x="600" y="318" width="380" height="12" rx="6" fill="#5b7fa6" opacity="0.2"/>
+  <rect x="600" y="338" width="300" height="12" rx="6" fill="#5b7fa6" opacity="0.15"/>
+  <!-- Gemini badge -->
+  <rect x="600" y="380" width="140" height="44" rx="22" fill="#5b7fa6" opacity="0.8"/>
+  <rect x="758" y="380" width="120" height="44" rx="22" fill="#7eb8c9" opacity="0.6"/>
+
+  <!-- Right panel: wellness streak -->
+  <rect x="580" y="480" width="460" height="100" rx="24" fill="#5b7fa6" opacity="0.12"/>
+  <rect x="580" y="480" width="460" height="100" rx="24" fill="none" stroke="#5b7fa6" stroke-width="1.5"/>
+  <circle cx="630" cy="530" r="20" fill="#5b7fa6" opacity="0.6"/>
+  <circle cx="690" cy="530" r="20" fill="#5b7fa6" opacity="0.6"/>
+  <circle cx="750" cy="530" r="20" fill="#5b7fa6" opacity="0.6"/>
+  <circle cx="810" cy="530" r="20" fill="#7eb8c9" opacity="0.4"/>
+  <circle cx="870" cy="530" r="20" fill="#7eb8c9" opacity="0.3"/>
+  <rect x="910" y="518" width="110" height="24" rx="12" fill="#5b7fa6" opacity="0.3"/>
+
+  <!-- Title text -->
+  <text x="102" y="650" fill="#1e3a54" font-family="Arial, sans-serif" font-size="58" font-weight="800">MindEase</text>
+  <text x="102" y="695" fill="#5b7fa6" font-family="Arial, sans-serif" font-size="26" font-weight="700">AI wellness · Vue 3 + Go Fiber + Gemini</text>
+</svg>

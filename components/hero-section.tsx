@@ -12,8 +12,8 @@ const roles = [
 ]
 
 const stats = [
-  { value: "4+", label: "Projects" },
-  { value: "2+", label: "Languages" },
+  { value: "5+", label: "Projects" },
+  { value: "3+", label: "Languages" },
   { value: "1+", label: "Years Coding" },
 ]
 

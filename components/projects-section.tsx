@@ -17,6 +17,29 @@ import {
 
 const projects = [
   {
+    title: "MindEase",
+    tagline: "AI-powered mental wellness app",
+    description:
+      "Thesis project built with Vue.js 3, Go Fiber v3, Oracle DB, and Google Gemini Flash API. Features AI-driven mood tracking, journaling, and personalized wellness insights — deployed on AWS EC2 and Oracle Cloud Free Tier.",
+    tech: ["Vue.js 3", "Go", "Fiber v3", "Oracle DB", "Gemini API", "AWS EC2"],
+    role: "Full-stack + AI integration",
+    timeline: "Thesis project",
+    highlights: ["AI mood analysis via Gemini Flash", "Secure auth & user sessions", "Deployed on AWS EC2"],
+    metrics: [
+      { label: "AI", value: "Gemini" },
+      { label: "Deploy", value: "AWS" },
+      { label: "Stack", value: "Full" },
+    ],
+    result: "A production-deployed wellness app combining Vue 3 frontend, Go Fiber API, Oracle persistence, and Google Gemini AI in one cohesive product.",
+    gradient: "from-[#5b7fa6] to-[#7eb8c9]",
+    previewColor: "#5b7fa6",
+    image: "/projects/mindease.svg",
+    featured: true,
+    number: "01",
+    githubUrl: "https://github.com/LyhengLT/mindease",
+    demoUrl: "https://lyhenglt.github.io/mindease",
+  },
+  {
     title: "Nomads Go",
     tagline: "Full-stack Nomads.com clone",
     description:
@@ -34,8 +57,8 @@ const projects = [
     gradient: "from-[#9b5f3d] to-[#caa26a]",
     previewColor: "#9b5f3d",
     image: "/portfolio/projects/nomads-go.svg",
-    featured: true,
-    number: "01",
+    featured: false,
+    number: "02",
     githubUrl: "https://github.com/LyhengLT/nomads-clone",
     demoUrl: "https://lyhenglt.github.io/nomads-clone/",
   },
@@ -58,7 +81,7 @@ const projects = [
     previewColor: "#a65f4a",
     image: "/portfolio/projects/wip-clone.svg",
     featured: false,
-    number: "02",
+    number: "03",
     githubUrl: null,
     demoUrl: null,
   },
@@ -81,7 +104,7 @@ const projects = [
     previewColor: "#68795d",
     image: "/portfolio/projects/bongthom-clone.svg",
     featured: false,
-    number: "03",
+    number: "04",
     githubUrl: "https://github.com/LyhengLT/bongthom-clone",
     demoUrl: null,
   },
@@ -104,7 +127,7 @@ const projects = [
     previewColor: "#374151",
     image: "/portfolio/projects/remoteok-clone.svg",
     featured: false,
-    number: "04",
+    number: "05",
     githubUrl: "https://github.com/LyhengLT/remoteok-clone",
     demoUrl: null,
   },
@@ -112,8 +135,15 @@ const projects = [
 
 const projectSignals = [
   {
+    label: "AI-powered thesis",
+    value: "MindEase",
+    detail: "Vue 3 + Go Fiber + Oracle DB + Gemini Flash API, deployed live on AWS EC2.",
+    icon: Sparkles,
+    color: "#5b7fa6",
+  },
+  {
     label: "Full-stack flow",
-    value: "2 builds",
+    value: "3 builds",
     detail: "Vue screens connected to Go Fiber APIs and database-backed project logic.",
     icon: Layers3,
     color: "#68795d",
@@ -124,13 +154,6 @@ const projectSignals = [
     detail: "Real product layouts recreated with responsive spacing, states, and motion.",
     icon: BarChart3,
     color: "#9b5f3d",
-  },
-  {
-    label: "Launch habit",
-    value: "Daily push",
-    detail: "Small visible upgrades keep the portfolio feeling active instead of frozen.",
-    icon: Rocket,
-    color: "#a65f4a",
   },
 ]
 
