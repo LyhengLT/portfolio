@@ -18,11 +18,11 @@ const stats = [
 ]
 
 const heroLetters = "Lyheng".split("")
-const signalItems = ["Vue.js interfaces", "Go Fiber APIs", "Oracle Database", "Real project clones"]
+const signalItems = ["Vue.js interfaces", "Go Fiber APIs", "Gemini AI integration", "AWS EC2 deployment"]
 
 const terminalLines = [
-  { prompt: "lyheng", command: "build", result: "portfolio --warm-studio" },
-  { prompt: "stack", command: "ship", result: "vue + go + oracle" },
+  { prompt: "lyheng", command: "build", result: "mindease --thesis" },
+  { prompt: "stack", command: "ship", result: "vue + go + gemini + aws" },
   { prompt: "status", command: "ready", result: "open to opportunities" },
 ]
 
@@ -34,15 +34,15 @@ const liveActions = [
 ]
 
 const todayUpdates = [
-  "Project signal board added",
-  "Work section reads faster",
-  "June 3 polish shipped",
+  "MindEase thesis project added",
+  "AI & cloud stack now visible",
+  "Now section reflects real focus",
 ]
 
 const latestUpdateItems = [
-  "Added a new Projects signal board so visitors can understand the work before opening each card.",
-  "Made project strengths easier to scan across full-stack flow, UI polish, clone practice, and deployment.",
-  "Kept the daily update streak moving with a real June 3 design improvement.",
+  "Added MindEase — the thesis project — as the featured work: Vue 3, Go Fiber, Oracle DB, Gemini Flash, deployed on AWS EC2.",
+  "Tech stack updated with Google Gemini API, Docker, and AWS EC2 to reflect the full picture of what I'm building.",
+  "Now section and learning cards updated to match the current focus: shipping MindEase and integrating AI into real backends.",
 ]
 
 function useTypewriter(words: string[], speed = 80, pause = 2200) {

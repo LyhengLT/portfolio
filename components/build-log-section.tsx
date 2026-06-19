@@ -38,11 +38,11 @@ const buildSteps = [
   {
     number: "04",
     title: "Polish and Ship",
-    detail: "Add animation, fix rough edges, check the build, then push a version people can open.",
-    output: "Deployed portfolio updates with visual QA",
+    detail: "Add animation, integrate AI APIs, fix rough edges, check the build, then deploy a version people can open.",
+    output: "Deployed app on AWS EC2 with Gemini AI wired in and visual QA done",
     icon: Sparkles,
     progress: 86,
-    tags: ["qa", "deploy", "github"],
+    tags: ["aws", "docker", "gemini", "deploy"],
     color: "#a65f4a",
   },
 ]

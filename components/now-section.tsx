@@ -6,39 +6,39 @@ import { Code2, DatabaseZap, Gauge, Rocket, Sparkles } from "lucide-react"
 
 const focusItems = [
   {
-    title: "Portfolio Motion",
-    description: "Keeping the site expressive with scroll reveals, animated project signals, and richer visual rhythm.",
+    title: "MindEase Thesis",
+    description: "Shipping the final version of my AI-powered mental wellness app — Vue 3 frontend, Go Fiber API, Oracle DB, and Gemini Flash integration deployed on AWS EC2.",
     icon: Sparkles,
-    progress: 88,
-    note: "Visual polish",
-    color: "#9b5f3d",
+    progress: 90,
+    note: "Thesis project",
+    color: "#5b7fa6",
   },
   {
-    title: "Full-Stack Clones",
-    description: "Turning real product patterns into Vue, Go Fiber, REST APIs, and database-backed workflows.",
+    title: "AI Integration",
+    description: "Learning how to wire LLM APIs into real backend flows — prompt design, response handling, and keeping AI calls fast and reliable.",
     icon: Code2,
-    progress: 76,
-    note: "Product practice",
+    progress: 72,
+    note: "Gemini Flash",
     color: "#68795d",
   },
   {
-    title: "Database Thinking",
-    description: "Improving schema planning, query structure, persistence, and data flow across projects.",
+    title: "Cloud Deployment",
+    description: "Getting comfortable with AWS EC2, Oracle Cloud Free Tier, Docker containers, and keeping a real app running in production.",
     icon: DatabaseZap,
-    progress: 64,
-    note: "Oracle + SQL",
+    progress: 68,
+    note: "AWS + Docker",
     color: "#8f6b45",
   },
 ]
 
 const roadmap = [
-  "Add stronger project stories",
-  "Polish mobile spacing",
-  "Improve backend project docs",
-  "Ship another clone update",
+  "Ship MindEase v1 publicly",
+  "Write MindEase project case study",
+  "Improve API error handling & docs",
+  "Add LinkedIn to portfolio contacts",
 ]
 
-const floatingLabels = ["Vue", "Go Fiber", "Oracle", "REST", "Motion", "Deploy"]
+const floatingLabels = ["Vue", "Go Fiber", "Gemini", "AWS", "Oracle", "Docker"]
 
 export function NowSection() {
   const sectionRef = useRef<HTMLElement>(null)

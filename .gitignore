@@ -13,3 +13,7 @@ __v0_jsx-dev-runtime.ts
 node_modules
 .next/
 .DS_Store
+out/
+
+# Claude / Cowork local config (not part of the project)
+.claude/

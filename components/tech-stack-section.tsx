@@ -27,6 +27,7 @@ const techStack = [
     techs: [
       { name: "Go (Fiber v3)", level: 70 },
       { name: "REST APIs", level: 75 },
+      { name: "Google Gemini API", level: 65 },
     ],
   },
   {
@@ -41,15 +42,16 @@ const techStack = [
     ],
   },
   {
-    category: "Tools",
+    category: "Tools & Infra",
     gradient: "from-[#374151] to-[#68795d]",
     color: "text-[#374151]",
     bg: "bg-[#374151]/10",
     icon: Wrench,
     techs: [
       { name: "Git", level: 80 },
-      { name: "VS Code", level: 90 },
-      { name: "macOS / Terminal", level: 85 },
+      { name: "Docker", level: 65 },
+      { name: "AWS EC2", level: 60 },
+      { name: "VS Code / Terminal", level: 90 },
     ],
   },
 ]
@@ -59,9 +61,11 @@ const marqueeItems = [
   "Go Fiber",
   "REST APIs",
   "Oracle DB",
+  "Gemini API",
   "JavaScript",
+  "Docker",
+  "AWS EC2",
   "Responsive UI",
-  "Git",
   "Clean Architecture",
 ]
 
@@ -179,7 +183,7 @@ export function TechStackSection() {
         <div className="stack-workflow reveal mb-12">
           <div className="stack-workflow-header">
             <span className="section-kicker text-primary font-mono uppercase">How the stack connects</span>
-            <span className="stack-workflow-status">June 2 focus</span>
+            <span className="stack-workflow-status">Full-stack flow</span>
           </div>
           <div className="stack-workflow-grid">
             {stackWorkflow.map((step, index) => (

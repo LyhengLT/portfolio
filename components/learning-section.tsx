@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import type { CSSProperties } from "react"
-import { BookOpen, Code, Database, Zap } from "lucide-react"
+import { BookOpen, Cloud, Code, Database, Zap } from "lucide-react"
 
 const learning = [
   {
@@ -37,18 +37,28 @@ const learning = [
   },
   {
     title: "System Design",
-    description: "Architecting scalable systems, APIs, and distributed services.",
+    description: "Architecting scalable systems, APIs, and distributed services — applying it hands-on with MindEase.",
     icon: Zap,
-    progress: 30,
+    progress: 50,
     gradient: "from-[#68795d] to-[#a4a86f]",
     color: "text-[#68795d]",
     bg: "bg-[#68795d]/10",
-    status: "Starting",
+    status: "Active",
+  },
+  {
+    title: "AI & Cloud",
+    description: "Integrating LLM APIs (Google Gemini Flash) into Go backends, and deploying apps on AWS EC2 and Oracle Cloud.",
+    icon: Cloud,
+    progress: 65,
+    gradient: "from-[#5b7fa6] to-[#7eb8c9]",
+    color: "text-[#5b7fa6]",
+    bg: "bg-[#5b7fa6]/10",
+    status: "Active",
   },
 ]
 
 const statusStyle: Record<string, string> = {
-  Active:   "text-[#68795d] bg-[#68795d]/10 border-[#68795d]/20",
+  Active:   "text-[#5b7fa6] bg-[#5b7fa6]/10 border-[#5b7fa6]/20",
   Ongoing:  "text-[#9b5f3d] bg-[#9b5f3d]/10 border-[#9b5f3d]/20",
   Starting: "text-[#8f6b45] bg-[#8f6b45]/10 border-[#8f6b45]/20",
 }
