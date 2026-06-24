@@ -20,6 +20,12 @@ export function Navigation() {
   const [activeSection, setActiveSection] = useState("")
   const [scrollProgress, setScrollProgress] = useState(0)
 
+  // Disable browser scroll restoration so page always starts at top on refresh
+  useEffect(() => {
+    window.history.scrollRestoration = "manual"
+    window.scrollTo(0, 0)
+  }, [])
+
   useEffect(() => {
     const handleScroll = () => {
       const maxScroll = document.documentElement.scrollHeight - window.innerHeight
